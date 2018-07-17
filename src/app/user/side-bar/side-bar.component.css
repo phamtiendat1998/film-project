@@ -1,0 +1,131 @@
+#sidebar {
+  position: relative;
+  background-color: #000000d4;
+  min-width: 200px;
+  max-width: 200px;
+  height: 100vh;
+}
+
+#sidebar .sidebar-header {
+  padding-top: 25px;
+  padding-left: 40px;
+}
+
+#sidebar .sidebar-clock {
+  padding: 10px 0;
+  color: #FFCE00;
+}
+
+#sidebar ul {
+  margin-top: 200px;
+}
+
+#sidebar ul li {
+  /* transform: rotate(-90deg); */
+  margin: 20px 0;
+  margin-left: 40px;
+}
+
+#sidebar ul li a {
+  position: relative;
+  outline: none;
+  color: #908199;
+  display: block;
+  font-size: 12px;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li a.active {
+  color: #FFCE00;
+  text-decoration: none;
+}
+
+.btn-link {
+  color: #FFCE00;
+}
+
+/* Effect */
+
+#sidebar ul li a::before,
+#sidebar ul li a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+#sidebar ul li a::before {
+  margin-right: 10px;
+  content: '[';
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+#sidebar ul li a::after {
+  margin-left: 10px;
+  content: ']';
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+#sidebar ul li a:hover::before,
+#sidebar ul li a:hover::after,
+#sidebar ul li a:focus::before,
+#sidebar ul li a:focus::after,
+#sidebar ul li a.active::before,
+#sidebar ul li a.active::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/* LOGO */
+
+.logo {
+  width: 30px;
+  height: 40px;
+  border: 2px solid #FFCE00;
+  background-color: transparent;
+}
+
+.logo-name {
+  color: white;
+  text-align: left;
+}
+
+.logo-name p {
+  margin: 0;
+}
+
+/* LOGIN */
+
+.login {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.btn-login {
+  border: none;
+  background-color: transparent;
+  width: 200px;
+  height: 60px;
+  border-top: 1px solid #908199;
+  color: #908199;
+}
+
+.txt-btn-login {
+  color: white;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-login:hover.txt-btn-login {
+  border-top: 1px solid #FFCE00;
+  color: #FFCE00;
+}
+  

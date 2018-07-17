@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+}
+
+.side-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.content {
+  margin-top: -25vh;
+  position: absolute;
+  width: calc(100% - 230px);
+  right: 0;
+  height: 2000px;
+  background-color: transparent;
+  z-index: 99;
+}

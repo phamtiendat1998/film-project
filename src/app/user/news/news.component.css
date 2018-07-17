@@ -1,0 +1,29 @@
+.news-title {
+  background-color: white;
+  width: 20%;
+  height: 7vh
+}
+
+.news-content {
+  background-color: white;
+  width: 100%;
+  height: 25vh;
+}
+
+.btn-news {
+  color: #FFCE00;
+  padding-top: 0;
+}
+
+.news-item {
+  color: #FFCE00;
+}
+
+.news-noidung {
+  font-size: 15px;
+  color: #908199;
+}
+
+.container {
+  max-width: 1205px;
+}
