@@ -1,3 +1,39 @@
 img {
   filter: brightness(50%);
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+  /* position: absolute; */
+  width: 30px;
+  height: 30px;
+  bottom: 20%;
+  top: auto;
+  z-index: 400;
+  border: 2px solid #FFCE00;
+  border-radius: 20px;
+}
+
+.carousel-control-next {
+  right: 2%;
+}
+
+.carousel-control-prev {
+  right: 5%;
+  left: auto;
+}
+
+.carousel-caption {
+  bottom: auto;
+  top: 10px;
+  left: 20%;
+  right: auto;
+}
+
+.carousel-title {
+  font-size: 50px;
+}
+
+.carousel-link {
+  color: #C9CDD1;
+}
