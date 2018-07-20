@@ -3,7 +3,7 @@
   <div class="sidebar-header d-flex align-items-center justify-content-center">
     <div class="logo">
     </div>
-    <div class="logo-name ml-2" *ngIf="!clickSM">
+    <div class="logo-name ml-2 animated fadeIn" *ngIf="!clickSM">
       <p>NOT just</p>
       <p>CINEMA</p>
     </div>
@@ -16,41 +16,41 @@
   <ul class="list-unstyled">
     <li class="d-flex align-items-center justify-content-center">
       <a href="#" class="active" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon1">HOME</span>
+        <span *ngIf="!clickSM; else sidebarIcon1" class="animated fadeIn">HOME</span>
         <ng-template #sidebarIcon1>
-          <i class="fa fa-home"></i>
+          <i class="fa fa-home animated fadeIn"></i>
         </ng-template>
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
       <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon2">ĐANG CHIẾU</span>
+        <span *ngIf="!clickSM; else sidebarIcon2" class="animated fadeIn">ĐANG CHIẾU</span>
         <ng-template #sidebarIcon2>
-          <i class="fa fa-ticket"></i>
+          <i class="fa fa-ticket animated fadeIn"></i>
         </ng-template>
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
       <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon3">SẮP CHIẾU</span>
+        <span *ngIf="!clickSM; else sidebarIcon3" class="animated fadeIn">SẮP CHIẾU</span>
         <ng-template #sidebarIcon3>
-          <i class="fa fa-film"></i>
+          <i class="fa fa-film animated fadeIn"></i>
         </ng-template>
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
       <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon4">ABOUT</span>
+        <span *ngIf="!clickSM; else sidebarIcon4" class="animated fadeIn">ABOUT</span>
         <ng-template #sidebarIcon4>
-          <i class="fa fa-info"></i>
+          <i class="fa fa-info animated fadeIn"></i>
         </ng-template>
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
       <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon5">CONTACT</span>
+        <span *ngIf="!clickSM; else sidebarIcon5" class="animated fadeIn">CONTACT</span>
         <ng-template #sidebarIcon5>
-          <i class="fa fa-address-book-o"></i>
+          <i class="fa fa-address-book-o animated fadeIn"></i>
         </ng-template>
       </a>
     </li>
@@ -60,7 +60,7 @@
       </button>
     </li>
   </ul>
-  <div class="login">
+  <!-- <div class="login">
     <button type="button" class="btn-login">
       <span class="pr-2" *ngIf="!clickSM; else sidebarLogin">Sign In</span>
       <ng-template #sidebarLogin>
@@ -69,5 +69,5 @@
         </span>
       </ng-template>
     </button>
-  </div>
+  </div> -->
 </nav>

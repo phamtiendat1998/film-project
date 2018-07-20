@@ -1,3 +1,15 @@
-<div class="search-bar d-flex align-items-center justify-content-center">
-  <i class="fa fa-search"></i>
+<div class="d-flex">
+  <div class="search-bar d-flex align-items-center justify-content-center" (click)="moDivSearch();">
+    <i class="fa fa-search animated bounceInLeft" *ngIf="!status; else showClose"></i>
+    <ng-template #showClose>
+      <i class="fa fa-times animated bounceInRight"></i>
+    </ng-template>
+  </div>
+  <div class="search-area" [ngClass]="{'search-area--open': status}">
+    <div class="search-box animated fadeIn ml-auto mr-auto mt-4" *ngIf="status">
+      <input type="text" placeholder="Nhập từ khóa tìm kiếm...">
+    </div>
+    <div class="search-content">
+    </div>
+  </div>
 </div>
