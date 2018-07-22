@@ -33,7 +33,7 @@ img {
 }
 
 .info-film {
-  width: 20%;
+  width: 30%;
   position: absolute;
   top: 0;
 }
@@ -47,6 +47,7 @@ img {
   background: #000000d4;
   color: #908199;
   animation-duration: 2s;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .title-news {

@@ -1,20 +1,63 @@
-.btn-link{
-    color: white;
+.modal-dialog {
+  max-width: 670px;
 }
-.btn-link:hover,
-.btn-link:focus {
-    text-decoration: none;
+
+.btn-dangnhap {
+  right: 5px;
+  top: 10px;
+  position: absolute;
+  color: #f7f7f7;
+  overflow: hidden;
 }
-.btn-select-rap{
-    color: white;
-    border: none;
-    background-color: transparent;
+
+.sign-with-sub {
+  font-size: 10px;
 }
-.btn-select-rap:focus{
-    border: none;
+
+.sign-with .sign-with-content div {
+  height: 50px;
+  width: 300px;
+  padding: 10px 15px;
+  border: 1px solid black;
+  background-color: #bcc0be66;
+  cursor: pointer;
 }
-.custom-select{
-    background-color: transparent;
-    color: white;
-    border: none;
+
+.facebook:hover {
+  color: blue;
+}
+
+.google:hover {
+  color: red;
+}
+
+.sign-with .sign-with-content div:first-child {
+  border-right: none;
+}
+
+.sign-with-tk .sign-with-content div input {
+  height: 50px;
+  width: 300px;
+  padding: 10px 15px;
+}
+
+.sign-with-tk .sign-with-content div input:focus {
+  border: 1px solid black;
+}
+
+.btn-dn {
+  width: 600px;
+  padding: 10px 15px;
+  background-color: #0E0707;
+  color: white;
+}
+
+.dangky {
+  height: 0;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.dangky-show {
+  height: 50px;
 }
