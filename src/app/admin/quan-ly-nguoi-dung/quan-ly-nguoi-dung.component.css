@@ -106,7 +106,7 @@
   }
   
   .login-content .login-box.flipped {
-    min-height: 450px;
+    min-height: 300px;
   }
   
   .login-content .login-box.flipped .login-form {
@@ -120,9 +120,3 @@
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
-input.ng-invalid.ng-touched{
-    border-left: 3px solid red;
-}
-input.ng-valid.ng-touched {
-  border-left: 3px solid green;
-}
