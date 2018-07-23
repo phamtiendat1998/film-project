@@ -7,7 +7,7 @@ img {
   /* position: absolute; */
   width: 30px;
   height: 30px;
-  bottom: 20%;
+  bottom: 25%;
   top: auto;
   z-index: 400;
   border: 2px solid #FFCE00;
@@ -24,10 +24,34 @@ img {
 }
 
 .carousel-caption {
+  width: 80%;
+  height: 100%;
   bottom: auto;
   top: 10px;
   left: 20%;
   right: auto;
+}
+
+.info-film {
+  width: 30%;
+  position: absolute;
+  top: 0;
+}
+
+.info-news {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  bottom: 10%;
+  right: 0;
+  background: #000000d4;
+  color: #908199;
+  animation-duration: 2s;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.title-news {
+  color: #FFCE00;
 }
 
 .carousel-title {
@@ -36,4 +60,16 @@ img {
 
 .carousel-link {
   color: #C9CDD1;
+}
+
+/* BTN */
+
+.btn-datve {
+  background-color: #FFCE00;
+}
+
+/* ANIMATED */
+
+.delay {
+  animation-delay: 1s;
 }

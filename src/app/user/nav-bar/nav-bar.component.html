@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,5 +23,77 @@
         <button class="btn btn-link">Đăng nhập</button>
       </li>
     </ul>
+  </div> -->
+  <!-- <button class="btn btn-link btn-dangnhap">Đăng Nhập</button> -->
+  <button mat-button type="button" class="btn-dangnhap" data-toggle="modal" data-target="#exampleModal">Đăng Nhập</button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="sign-with">
+            <p class="sign-with-sub animated fadeInUp" *ngIf="!status; else title">ĐÃ CÓ TÀI KHOẢN</p>
+            <ng-template #title>
+              <p class="sign-with-sub animated fadeInUp">CHƯA CÓ TÀI KHOẢN</p>
+            </ng-template>
+            <p class="sign-with-title font-weight-bold">
+              Đăng
+              <span class="animated fadeInUp" *ngIf="!status;else man"> Nhập</span>
+              <ng-template #man>
+                <span class="animated fadeInUp"> Ký</span>
+              </ng-template>
+              Với
+            </p>
+            <div class="sign-with-content d-flex justify-content-center align-items-center">
+              <div class="facebook item">
+                <i class="fa fa-facebook"></i>
+              </div>
+              <div class="google item">
+                <i class="fa fa-google"></i>
+              </div>
+            </div>
+          </div>
+          <div class="sign-with-tk mt-5">
+            <p class="sign-with-title font-weight-bold">
+              Đăng
+              <span class="animated fadeInUp" *ngIf="!status;else man"> Nhập</span>
+              <ng-template #man>
+                <span class="animated fadeInUp"> Ký</span>
+              </ng-template>
+              Với Tài Khoản
+            </p>
+            <div class="sign-with-content">
+              <div>
+                <input type="text" placeholder="TÀI KHOẢN">
+                <input type="text" placeholder="MẬT KHẨU">
+              </div>
+              <div class="dangky" [ngClass]="{'dangky-show': status}">
+                <input type="text" placeholder="EMAIL">
+                <input type="text" placeholder="SỐ ĐIỆN THOẠI">
+              </div>
+              <div class="btn-dn ml-auto mr-auto">
+                <span class="animated fadeIn" *ngIf="!status;else man3">ĐĂNG NHẬP</span>
+                <ng-template #man3>
+                  <span class="animated fadeIn">ĐĂNG KÝ</span>
+                </ng-template>
+              </div>
+              <p class="sign-with-sub animated fadeIn mt-3" *ngIf="!status">QUÊN MẬT KHẨU</p>
+              <p class="sign-with-title font-weight-bold mt-2 animated fadeInUp" *ngIf="!status;else man1">
+                BẠN CHƯA CÓ TÀI KHOẢN ?
+              </p>
+              <ng-template #man1>
+                <p class="sign-with-title font-weight-bold mt-2  animated fadeInUp">
+                  BẠN ĐÃ CÓ TÀI KHOẢN RỒI !
+                </p>
+              </ng-template>
+              <button type="button" class="btn btn-link animated fadeIn" (click)="Stwich()" *ngIf="!status;else man2">Đăng Ký</button>
+              <ng-template #man2>
+                <button type="button" class="btn btn-link animated fadeIn" (click)="Stwich()">Đăng Nhập</button>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
