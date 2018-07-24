@@ -11,47 +11,30 @@ export class HeaderAdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).ready(function () {
-      // let treeviewMenu = $('.app-menu');
-      // $('#sidebarCollapse').on('click', function () {
-      //   $('#sidebar, #content').toggleClass('active');
-      //   $('.collapse.in').toggleClass('in');
-      //   $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-      // });
-      // // Activate sidebar treeview toggle
-      // $("[data-toggle='treeview']").click(function (event) {
-      //   event.preventDefault();
-      //   if (!$(this).parent().hasClass('is-expanded')) {
-      //     treeviewMenu.find("[data-toggle='treeview']").parent().removeClass('is-expanded');
-      //   }
-      //   $(this).parent().toggleClass('is-expanded');
-      // });
+    // $(document).ready(function () {
+    //  let treeviewMenu = $('.app-menu');
 
-      // // Set initial active toggle
-      // $("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
-     let treeviewMenu = $('.app-menu');
+    //   // Toggle Sidebar
+    //   $('[data-toggle="sidebar"]').click(function (event) {
+    //     event.preventDefault();
+    //     $('.app').toggleClass('sidenav-toggled');
+    //   });
 
-      // Toggle Sidebar
-      $('[data-toggle="sidebar"]').click(function (event) {
-        event.preventDefault();
-        $('.app').toggleClass('sidenav-toggled');
-      });
+    //   // Activate sidebar treeview toggle
+    //   $("[data-toggle='treeview']").click(function (event) {
+    //     event.preventDefault();
+    //     if (!$(this).parent().hasClass('is-expanded')) {
+    //       treeviewMenu.find("[data-toggle='treeview']").parent().removeClass('is-expanded');
+    //     }
+    //     $(this).parent().toggleClass('is-expanded');
+    //   });
 
-      // Activate sidebar treeview toggle
-      $("[data-toggle='treeview']").click(function (event) {
-        event.preventDefault();
-        if (!$(this).parent().hasClass('is-expanded')) {
-          treeviewMenu.find("[data-toggle='treeview']").parent().removeClass('is-expanded');
-        }
-        $(this).parent().toggleClass('is-expanded');
-      });
+    //   // Set initial active toggle
+    //   $("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
 
-      // Set initial active toggle
-      $("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
-
-      //Activate bootstrip tooltips
-      $("[data-toggle='tooltip']").tooltip();
-    });
+    //   //Activate bootstrip tooltips
+    //   $("[data-toggle='tooltip']").tooltip();
+    // });
   }
 
 }
