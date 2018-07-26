@@ -56,6 +56,7 @@ img {
 
 .carousel-title {
   font-size: 50px;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold, 0 0 80px gold, 0 0 90px gold, 0 0 100px gold, 0 0 150px gold
 }
 
 .carousel-link {
@@ -65,7 +66,18 @@ img {
 /* BTN */
 
 .btn-datve {
-  background-color: #FFCE00;
+  background-color: transparent;
+  color: #fff;
+  text-shadow: 0px 0px 10px gold;
+}
+
+.btn-datve:hover {
+  background-color: #00000061;
+}
+
+.btn-datve:focus {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* ANIMATED */
