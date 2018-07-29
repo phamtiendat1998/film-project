@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import $ from 'jquery';
+declare var $: any;
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -10,6 +11,7 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // let heightSC = $(window).height();
+    // $('.carousel-item').css({ 'height': heightSC + 'px' });
   }
-
 }

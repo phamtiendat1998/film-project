@@ -7,7 +7,7 @@
   right: 5px;
   top: 10px;
   position: absolute;
-  color: #f7f7f7;
+  color: #FFCE00;
   background-color: transparent;
   overflow: hidden;
 }
@@ -19,6 +19,7 @@
 .btn-dangnhap:focus {
   box-shadow: none;
   border: none;
+  outline: none;
 }
 
 .sign-with,
@@ -68,13 +69,16 @@
 
 .sign-with-tk .sign-with-content div input:focus {
   border: 1px solid black;
+  outline: none;
 }
 
 .btn-dn {
   width: 600px;
   padding: 10px 15px;
-  background-color: #0E0707;
+  background-color: #39475A;
   color: white;
+  cursor: pointer;
+  border: none;
 }
 
 .dangky {
@@ -103,4 +107,20 @@
 .btn-link:hover {
   text-decoration: none;
   text-shadow: 0 0 20px black, 0 0 40px black;
+}
+
+input::placeholder {
+  font-size: 12px;
+}
+
+input:focus,
+input:active {
+  border: 1px solid black !important;
+}
+
+input:focus::placeholder {
+  color: black;
+  font-weight: bold;
+  padding-left: 10%;
+  transition: all 1s;
 }

@@ -9,15 +9,18 @@
   z-index: 100;
 }
 
+.carousel {
+  background-color: #0c0c0c;
+}
+
 .navtop {
   z-index: 200;
 }
 
 .content {
-  /* width: calc(100% - 230px); */
   width: 100%;
   right: 0;
   height: 2000px;
-  background-color: #0b1011;
+  background-color: #0c0c0c;
   z-index: 99;
 }

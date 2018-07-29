@@ -12,14 +12,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
+import { ItemPhimComponent } from './item-phim/item-phim.component';
 
 @NgModule({
   imports: [
     CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule
   ],
-  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent],
+  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent],
   exports: [
-    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent
+    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent,ItemPhimComponent
   ]
 })
 export class UserModule { }
