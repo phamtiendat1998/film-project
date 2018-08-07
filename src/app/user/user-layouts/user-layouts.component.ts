@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PopupTrailerComponent } from '../popup-trailer/popup-trailer.component';
 
 @Component({
   selector: 'app-user-layouts',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-layouts.component.css']
 })
 export class UserLayoutsComponent implements OnInit {
-
+  @ViewChild(PopupTrailerComponent) popupTrailer: PopupTrailerComponent;
+  public st: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
-
+  closeTrailer() {
+    this.popupTrailer.close(this.st);
+  }
 }

@@ -12,10 +12,18 @@
   <div class="sidebar-clock text-center">
     <p>12:50</p>
   </div>
+  <div class="login" data-toggle="modal" data-target="#popupLogin">
+    <p class="text-center">
+      <span *ngIf="!clickSM;else login" class="animated fadeIn">ĐĂNG NHẬP</span>
+      <ng-template #login>
+        <i class="fa fa-sign-in animated fadeIn"></i>
+      </ng-template>
+    </p>
+  </div>
   <!-- Content Bar -->
   <ul class="list-unstyled">
     <li class="d-flex align-items-center justify-content-center">
-      <a href="#" class="active" [ngClass]="{'fontIcon': clickSM}">
+      <a href="#home" class="active" [ngClass]="{'fontIcon': clickSM}">
         <span *ngIf="!clickSM; else sidebarIcon1" class="animated fadeIn">HOME</span>
         <ng-template #sidebarIcon1>
           <i class="fa fa-home animated fadeIn"></i>
@@ -23,18 +31,10 @@
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
-      <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon2" class="animated fadeIn">ĐANG CHIẾU</span>
+      <a href="#phim" class="" [ngClass]="{'fontIcon': clickSM}">
+        <span *ngIf="!clickSM; else sidebarIcon2" class="animated fadeIn">PHIM</span>
         <ng-template #sidebarIcon2>
           <i class="fa fa-ticket animated fadeIn"></i>
-        </ng-template>
-      </a>
-    </li>
-    <li class="d-flex align-items-center justify-content-center">
-      <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
-        <span *ngIf="!clickSM; else sidebarIcon3" class="animated fadeIn">SẮP CHIẾU</span>
-        <ng-template #sidebarIcon3>
-          <i class="fa fa-film animated fadeIn"></i>
         </ng-template>
       </a>
     </li>
@@ -60,14 +60,4 @@
       </button>
     </li>
   </ul>
-  <!-- <div class="login">
-    <button type="button" class="btn-login">
-      <span class="pr-2" *ngIf="!clickSM; else sidebarLogin">Sign In</span>
-      <ng-template #sidebarLogin>
-        <span>
-          <i class="fa fa-user-circle fontIcon"></i>
-        </span>
-      </ng-template>
-    </button>
-  </div> -->
 </nav>

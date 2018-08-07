@@ -7,16 +7,15 @@ import "rxjs/add/operator/map";
   providedIn: 'root'
 })
 export class PhimService {
-
   layDanhSachPhim() {
     let urlDSP = `http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP03`;
     let obServe: Observable<any> = this._http.get(urlDSP).map((result: Response) => result.json());
     return obServe;
   }
-  layChiTietPhim(maPhim){
+  layChiTietPhim(maPhim) {
     let urlCTP = `http://sv2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${maPhim}`;
     let obServe: Observable<any> = this._http.get(urlCTP).map((result: Response) => result.json());
-    return obServe; 
+    return obServe;
   }
   constructor(private _http: Http) { }
 }

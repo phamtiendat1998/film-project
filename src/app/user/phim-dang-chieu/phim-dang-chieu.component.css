@@ -36,6 +36,13 @@
   transition: all 0.7s;
 }
 
+.card-hover .card-hover-content {
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 0;
+  transition: all 0.7s;
+}
+
 .info-time {
   height: 70%;
   font-size: 12px;
@@ -70,16 +77,8 @@
   text-shadow: 0 0 2px black, 0 0 4px black, 0 0 8px black, 0 0 16px black, 0 0 32px black, 0 0 64px black;
 }
 
-/* ------ */
-
-.card-hover-content {
-  cursor: pointer;
-  font-size: 20px;
-  padding: 5px 0;
-  transition: all 0.7s;
-}
-
 .card-hover-content:hover {
+  /* text-shadow: 0 0 2px gold, 0 0 4px gold, 0 0 8px gold; */
   text-shadow: 0 0 2px black, 0 0 4px black, 0 0 8px black, 0 0 16px black, 0 0 32px black, 0 0 64px black;
   transform: scale(1.08, 1.08);
 }
@@ -91,4 +90,33 @@
 
 .card-hover-content:hover span {
   display: inline-block;
+}
+
+.group-phim {
+  position: relative;
+  transition: all 1s;
+}
+
+.btn-next,
+.btn-prev {
+  margin-top: auto;
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  top: -30px;
+}
+
+.btn-next:hover,
+.btn-prev:hover,
+.active {
+  text-shadow: 0 0 2px gold, 0 0 4px gold, 0 0 8px gold;
+  color: white;
+}
+
+.btn-next {
+  right: 45%;
+}
+
+.btn-prev {
+  left: 45%;
 }

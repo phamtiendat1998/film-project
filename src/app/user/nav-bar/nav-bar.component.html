@@ -1,36 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
-  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <button class="btn btn-select-rap" type="button">
-              <i class="fa fa-map-marker"></i>
-            </button>
-          </div>
-          <select class="custom-select" id="" aria-label="Example select with button addon">
-            <option value="1" selected>Rạp CGV</option>
-            <option value="2">Rạp Galaxy</option>
-            <option value="3">Rạp Lottle</option>
-          </select>
-        </div>
-      </li>
-      <li class="nav-item">
-        <button class="btn btn-link">Đăng nhập</button>
-      </li>
-    </ul>
-  </div> -->
-  <!-- <button class="btn btn-link btn-dangnhap">Đăng Nhập</button> -->
-  <button type="button" class="btn btn-dangnhap" data-toggle="modal" data-target="#exampleModal">Đăng Nhập</button>
+  <!-- <button type="button" class="btn btn-dangnhap" data-toggle="modal" data-target="#popupLogin">Đăng Nhập</button> -->
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="popupLoginLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body text-center">
+          <div data-dismiss="modal" class="closeLogin">
+            <i class="fa fa-times"></i>
+          </div>
           <div class="sign-with">
             <p class="sign-with-sub animated flip" *ngIf="!status; else title">ĐÃ CÓ TÀI KHOẢN</p>
             <ng-template #title>

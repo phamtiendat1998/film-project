@@ -13,5 +13,9 @@ export class CarouselComponent implements OnInit {
   ngOnInit() {
     // let heightSC = $(window).height();
     // $('.carousel-item').css({ 'height': heightSC + 'px' });
+    $(window).scroll(function () {
+      let wScroll = $(this).scrollTop();
+      $('#carouselExampleIndicators').css('opacity', 1 - wScroll / 500)
+    })
   }
 }

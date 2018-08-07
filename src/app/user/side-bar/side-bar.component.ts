@@ -20,7 +20,6 @@ export class SideBarComponent implements OnInit {
         that.clickSM = false;
       }
     })
-
   }
   ThuNho() {
     if (this.clickSM === false) {

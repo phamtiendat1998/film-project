@@ -1,18 +1,18 @@
 <div class="card-phim">
-  <img src="./../../../assets/img/card-test.jpg" alt="">
+  <img [src]="phimItem.HinhAnh" alt="">
   <div class="card-info">
     <div class="info-time pl-3 pt-5">
       <p>
-        <i class="fa fa-clock-o"></i>
-        5 : 00
+        <i class="fa fa-star-o"></i>
+        {{phimItem.DanhGia}}
       </p>
     </div>
     <div class="info-title pl-3">
-      <p class="title">Deadpool 2</p>
+      <p class="title">{{phimItem.TenPhim}}</p>
     </div>
   </div>
   <div class="card-hover text-right pr-2">
-    <div class="card-hover-content trailer">
+    <div class="card-hover-content trailer" (click)="UrlTrailer(phimItem.Trailer,phimItem.TenPhim)" data-toggle="modal" data-target="#modalTrailer">
       <span class="mr-4 animated fadeInLeft">Trailer</span>
       <i class="fa fa-play"></i>
     </div>

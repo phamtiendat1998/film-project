@@ -14,13 +14,43 @@
 }
 
 .navtop {
-  z-index: 200;
+  z-index: 100;
 }
 
 .content {
+  padding-left: 110px;
   width: 100%;
   right: 0;
-  height: 2000px;
   background-color: #0c0c0c;
   z-index: 99;
+}
+
+/* Modal Trailer */
+
+#modalTrailer .modal-dialog {
+  max-width: 70%;
+}
+
+#modalTrailer .modal-dialog .modal-content {
+  background-color: black;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.btn-close-trailer {
+  text-align: center;
+  font-size: 30px;
+}
+
+.btn-close-trailer i {
+  cursor: pointer;
+  color: gray;
+  transition: all 0.5s;
+}
+
+.btn-close-trailer i:hover {
+  color: white;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
 }

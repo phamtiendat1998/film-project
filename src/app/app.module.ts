@@ -10,10 +10,10 @@ import { ChartModule } from 'angular2-highcharts';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule, AdminModule, UserModule,AppRoutingModule,RouterModule,HttpModule,ChartModule
+    BrowserModule, AdminModule, UserModule, AppRoutingModule, RouterModule, HttpModule, ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

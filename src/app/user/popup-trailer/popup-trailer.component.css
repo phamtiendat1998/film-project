@@ -1,0 +1,6 @@
+.title p {
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
+  color: white;
+}

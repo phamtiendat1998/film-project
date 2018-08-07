@@ -15,6 +15,10 @@ body {
   z-index: 1020 !important;
 }
 
+.modal-backdrop.show {
+  opacity: 0.9 !important;
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -24,5 +28,5 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color:#FFCE00;
+  background-color: #FFCE00;
 }

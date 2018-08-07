@@ -3,16 +3,31 @@
     <app-search-bar></app-search-bar>
     <app-side-bar></app-side-bar>
   </div>
-  <div class="carousel">
+  <div class="carousel" id="home">
     <app-carousel></app-carousel>
   </div>
   <div class="navtop">
     <app-nav-bar></app-nav-bar>
   </div>
   <div class="content">
-    <div class="container pt-5">
-      <app-item-phim></app-item-phim>
+    <div id="phim">
+      <app-list-phim></app-list-phim>
     </div>
+
     <!-- <app-news></app-news> -->
+  </div>
+  <!-- Modal Trailer -->
+  <div id="modalTrailer" class="modal fade" id="modalTrailer" tabindex="-1" role="dialog" aria-labelledby="modalTrailerLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div data-dismiss="modal" class="btn-close-trailer" (click)="closeTrailer()">
+            <i class="fa fa-times"></i>
+          </div>
+          <app-popup-trailer></app-popup-trailer>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
