@@ -11,6 +11,7 @@ export class SideBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // Scroll thu nhỏ
     let that = this;
     $(window).scroll(function () {
       let wScroll = $(this).scrollTop();

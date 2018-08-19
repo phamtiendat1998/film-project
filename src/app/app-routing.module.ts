@@ -8,11 +8,10 @@ import { QuanLyNguoiDungComponent } from "./admin/quan-ly-nguoi-dung/quan-ly-ngu
 import { LoginAdminComponent } from "./admin/login-admin/login-admin.component";
 import { HeaderAdminComponent } from "./admin/header-admin/header-admin.component";
 import { TrangchuAdminComponent } from "./admin/trangchu-admin/trangchu-admin.component";
+import { ChiTietPhimLayoutsComponent } from "./user/chi-tiet-phim-layouts/chi-tiet-phim-layouts.component";
 const appRoute: Routes = [
-  {
-    path: "",
-    component: UserLayoutsComponent
-  },
+  { path: "", component: UserLayoutsComponent },
+  { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
   {
     path: "admin", component: LoginAdminComponent
   },

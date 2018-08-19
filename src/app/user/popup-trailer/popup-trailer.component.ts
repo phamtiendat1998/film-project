@@ -9,7 +9,7 @@ import { TransformTrailerService } from '../../services/transform-trailer.servic
 export class PopupTrailerComponent implements OnInit {
   public urlPhim;
   public ten;
-  public status: boolean;
+  public status: boolean = false;
   constructor(private URL: TransformTrailerService) { }
   ngOnInit() {
     this.URL.transform.subscribe(

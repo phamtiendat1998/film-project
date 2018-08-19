@@ -1,0 +1,104 @@
+.film {
+  width: 100%;
+  background-color: #0c0c0c;
+}
+
+.banner-film {
+  position: relative;
+  height: 100vh;
+}
+
+.img-film {
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(30%);
+  box-shadow: 0px -45px 110px 50px #0c0c0c inset;
+}
+
+.info-banner-film {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
+
+.container,
+.row {
+  height: 100%;
+}
+
+.info {
+  width: 100%;
+}
+
+.btn-3d-max {
+  padding: 5px 10px;
+  color: #D4D4D1;
+  display: inline-block;
+  border: solid 2px #D4D4D1;
+  border-radius: 5px;
+}
+
+.name-film {
+  color: white;
+  font-size: 70px;
+  font-weight: bolder;
+}
+
+.sub-film {
+  font-size: 14px;
+}
+
+.trailer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-play {
+  font-size: 90px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #D4D4D1;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/* Modal Trailer */
+
+#modalTrailer .modal-dialog {
+  max-width: 70%;
+}
+
+#modalTrailer .modal-dialog .modal-content {
+  background-color: black;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.btn-close-trailer {
+  text-align: center;
+  font-size: 30px;
+}
+
+.btn-close-trailer i {
+  cursor: pointer;
+  color: gray;
+  transition: all 0.5s;
+}
+
+.btn-close-trailer i:hover {
+  color: white;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
+}

@@ -18,10 +18,11 @@ import { PhimDangChieuComponent } from './phim-dang-chieu/phim-dang-chieu.compon
 import { PopupTrailerComponent } from './popup-trailer/popup-trailer.component';
 import { PipeModule } from '../pipe/pipe.module';
 import { ChiTietPhimLayoutsComponent } from './chi-tiet-phim-layouts/chi-tiet-phim-layouts.component';
+import { RouterModule } from '../../../node_modules/@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule
+    CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule
   ],
   declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent],
   exports: [

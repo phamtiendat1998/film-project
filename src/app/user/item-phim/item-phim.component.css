@@ -92,3 +92,9 @@
 .card-hover-content:hover span {
   display: inline-block;
 }
+
+.card-hover-content:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
