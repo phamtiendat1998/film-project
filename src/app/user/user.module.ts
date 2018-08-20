@@ -19,14 +19,15 @@ import { PopupTrailerComponent } from './popup-trailer/popup-trailer.component';
 import { PipeModule } from '../pipe/pipe.module';
 import { ChiTietPhimLayoutsComponent } from './chi-tiet-phim-layouts/chi-tiet-phim-layouts.component';
 import { RouterModule } from '../../../node_modules/@angular/router';
+import { ItemDienVienComponent } from './item-dien-vien/item-dien-vien.component';
 
 @NgModule({
   imports: [
     CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule
   ],
-  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent],
+  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent],
   exports: [
-    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent
+    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent,ItemDienVienComponent
   ]
 })
 export class UserModule { }

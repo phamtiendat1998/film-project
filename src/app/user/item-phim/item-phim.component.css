@@ -54,10 +54,6 @@
   box-shadow: 0px 0px 30px 3px black;
 }
 
-.card-phim:hover img {
-  filter: blur(2px);
-}
-
 .card-phim:hover .card-info {
   transform: translateY(-70%);
 }

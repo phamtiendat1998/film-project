@@ -13,10 +13,11 @@
 }
 
 img {
-  width: 100%;
-  height: 100%;
-  filter: brightness(30%);
+  width: 450px;
+  height: 600px;
   box-shadow: 0px -45px 110px 50px #0c0c0c inset;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px 3px black;
 }
 
 .info-banner-film {
@@ -49,20 +50,19 @@ img {
   color: white;
   font-size: 70px;
   font-weight: bolder;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
 }
 
 .sub-film {
   font-size: 14px;
 }
 
-.trailer {
+.item-phim {
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .btn-play {
-  font-size: 90px;
+  font-size: 70px;
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -70,7 +70,22 @@ img {
   transform: translate(-50%, -50%);
   color: #D4D4D1;
   cursor: pointer;
-  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+.btn-play:hover img {
+  filter: blur(20px);
+}
+
+.btn-play:hover {
+  text-shadow: 0 0 5px gold, 0 0 10px gold;
+}
+
+/* Diễn Viên */
+
+.title-dien-vien {
+  color: white;
+  font-size: 22px;
 }
 
 /* Modal Trailer */
