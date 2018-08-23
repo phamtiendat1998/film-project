@@ -159,3 +159,41 @@
 .login:hover p {
   transform: scale(1.1, 1.1);
 }
+
+.user-dn .icon-user {
+  color: #FFCE00;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* .user-dn .name-user {
+  color: #FFCE00;
+} */
+
+.user-dn-hover {
+  color: white;
+  position: absolute;
+  font-size: 10px;
+  width: 100%;
+  height: 0;
+  /* background-color: black; */
+  /* background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4); */
+  background-size: 400%;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.user-dn-hover p:first-child {
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold;
+}
+
+.content-hover {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.content-hover:hover {
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold;
+}

@@ -12,13 +12,29 @@
   <div class="sidebar-clock text-center">
     <p>12:50</p>
   </div>
-  <div class="login" data-toggle="modal" data-target="#popupLogin">
-    <p class="text-center">
-      <span *ngIf="!clickSM;else login" class="animated fadeIn">ĐĂNG NHẬP</span>
-      <ng-template #login>
-        <i class="fa fa-sign-in animated fadeIn"></i>
-      </ng-template>
-    </p>
+  <div class="userLogin">
+    <div class="login" data-toggle="modal" data-target="#popupLogin" *ngIf="statusLogin; else user">
+      <p class="text-center">
+        <span *ngIf="!clickSM;else login" class="animated fadeIn">ĐĂNG NHẬP</span>
+        <ng-template #login>
+          <i class="fa fa-sign-in animated fadeIn"></i>
+        </ng-template>
+      </p>
+    </div>
+    <ng-template #user>
+      <div class="user-dn" (click)="ClickUser()">
+        <p class="text-center icon-user">
+          <i class="fa fa-user-secret"></i>
+          <br>
+        </p>
+      </div>
+      <div class="user-dn-hover text-center">
+        <p class="content-hover">Tiến Đạt</p>
+        <p class="content-hover">Trang Cá Nhân</p>
+        <p class="content-hover">Lịch sử</p>
+        <p class="content-hover" (click)="DangXuat()">Thoát</p>
+      </div>
+    </ng-template>
   </div>
   <!-- Content Bar -->
   <ul class="list-unstyled">

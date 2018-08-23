@@ -35,22 +35,29 @@
   background-color: black;
 }
 
-.modal-body {
+#modalTrailer .modal-body {
   padding: 0;
 }
 
-.btn-close-trailer {
+#modalTrailer .btn-close-trailer {
   text-align: center;
   font-size: 30px;
 }
 
-.btn-close-trailer i {
+#modalTrailer .btn-close-trailer i {
   cursor: pointer;
   color: gray;
   transition: all 0.5s;
 }
 
-.btn-close-trailer i:hover {
+#modalTrailer .btn-close-trailer i:hover {
   color: white;
   text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
+}
+
+/* MODAL LOGIN */
+
+.popupLoginDialog {
+  max-width: 670px;
+  overflow: hidden;
 }

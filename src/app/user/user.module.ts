@@ -20,14 +20,18 @@ import { PipeModule } from '../pipe/pipe.module';
 import { ChiTietPhimLayoutsComponent } from './chi-tiet-phim-layouts/chi-tiet-phim-layouts.component';
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { ItemDienVienComponent } from './item-dien-vien/item-dien-vien.component';
+import { DatVeLayoutsComponent } from './dat-ve-layouts/dat-ve-layouts.component';
+import { ItemGheComponent } from './item-ghe/item-ghe.component';
+import { FormsModule } from '@angular/forms';
+import { LoadItemComponent } from './load-item/load-item.component';
 
 @NgModule({
   imports: [
-    CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule
+    CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule, FormsModule
   ],
-  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent],
+  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent],
   exports: [
-    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent,ItemDienVienComponent
+    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent
   ]
 })
 export class UserModule { }

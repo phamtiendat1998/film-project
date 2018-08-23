@@ -9,10 +9,11 @@ body {
   padding: 0;
   margin: 0;
   background-color: black;
+  /* overflow: hidden; */
 }
 
 .modal-backdrop {
-  z-index: 1020 !important;
+  /* z-index: 1020 !important; */
 }
 
 .modal-backdrop.show {

@@ -7,7 +7,9 @@ declare var $: any;
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  clickSM: boolean = false;
+  public clickSM: boolean = false;
+  public statusLogin: boolean = true;
+  public statusUser: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -20,13 +22,35 @@ export class SideBarComponent implements OnInit {
       } else {
         that.clickSM = false;
       }
-    })
+    });
+    this.GetUser();
   }
   ThuNho() {
     if (this.clickSM === false) {
       this.clickSM = true;
     } else {
       this.clickSM = false;
+    }
+  }
+  ClickUser() {
+    if (this.statusUser == true) {
+      this.statusUser = false;
+      $('.user-dn-hover').css("height", "120px");
+    } else {
+      this.statusUser = true;
+      $('.user-dn-hover').css("height", "0");
+    }
+  }
+  DangXuat() {
+    localStorage.removeItem("userLogin");
+    this.statusLogin = true;
+  }
+  GetUser() {
+    let userLogin = localStorage.getItem("userLogin");
+    if (userLogin !== null) {
+      this.statusLogin = false;
+    } else {
+      this.statusLogin = true;
     }
   }
 }

@@ -9,9 +9,11 @@ import { LoginAdminComponent } from "./admin/login-admin/login-admin.component";
 import { HeaderAdminComponent } from "./admin/header-admin/header-admin.component";
 import { TrangchuAdminComponent } from "./admin/trangchu-admin/trangchu-admin.component";
 import { ChiTietPhimLayoutsComponent } from "./user/chi-tiet-phim-layouts/chi-tiet-phim-layouts.component";
+import { ItemGheComponent } from "./user/item-ghe/item-ghe.component";
 const appRoute: Routes = [
   { path: "", component: UserLayoutsComponent },
   { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
+  { path: 'ghe', component: ItemGheComponent },
   {
     path: "admin", component: LoginAdminComponent
   },
