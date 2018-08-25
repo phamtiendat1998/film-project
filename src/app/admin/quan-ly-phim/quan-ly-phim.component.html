@@ -15,16 +15,23 @@
 <div class="row">
   <div class="col-md-12">
     <div class="tile">
-      <button id="btnThemNguoiDung" class="btn btn-success mb-2" data-toggle="modal" data-target="#exampleModal">Thêm Phim
-        <i class="icon-user"></i>
-      </button>
-      <div class="table-responsive">
-        <table class="table table-hover">
+      <div class="row">
+          <div class="col-md-6">
+              <button id="btnThemNguoiDung" class="btn btn-success mb-2" data-toggle="modal" data-target="#exampleModal">Thêm Phim
+                <i class="icon-user"></i>
+              </button>
+              </div>
+              <div class="col-md-6">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="tìm kiếm...">  
+              </div>
+      </div>
+      <div class="table-responsive table100">
+        <table class="table">
           <thead>
-            <tr>
+            <tr class="table100-head">
               <th>#</th>
-              <th>Mã Phim</th>
-              <th>Tên Phim</th>
+              <th (click)="sort('MaPhim')">Mã Phim <span class="fa fa-sort-amount-asc" *ngIf="key =='MaPhim'" [ngClass]="{'fa fa-sort-amount-asc':reverse,'fa fa-sort-amount-desc':!reverse}"></span></th>
+              <th (click)="sort('TenPhim')">Tên Phim <span class="fa fa-sort-amount-asc" *ngIf="key =='TenPhim'" [ngClass]="{'fa fa-sort-amount-asc':reverse,'fa fa-sort-amount-desc':!reverse}"></span></th>
               <th>Hình Ảnh</th>
               <th>Trailer</th>
               <th>Ngày Khởi Chiếu</th>
@@ -33,14 +40,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let phim of mangPhim">
-              <td></td>
+            <tr *ngFor="let phim of mangPhim | orderBy: key : reverse | filter:filter | paginate:{itemsPerPage:4,currentPage:p}; let i = index">
+              <td>{{i}}</td>
               <td>{{phim.MaPhim}}</td>
               <td>{{phim.TenPhim}}</td>
-              <td><img [src]="phim.HinhAnh" alt="" class="w-100"/></td>
+              <td><img [src]="phim.HinhAnh" alt="" class="img-fluid" width="100px;"/></td>
               <td>{{phim.Trailer}}</td>
               <td>{{phim.NgayKhoiChieu}}</td>
-              <td>{{phim.DanhGia}}</td>
+              <td>{{phim.DanhGia | number}}</td>
               <td>
                 <button class="btn btn-success">Sửa</button>
                 <button class="btn btn-danger">Xóa</button>
@@ -48,6 +55,7 @@
             </tr>
           </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
     </div>
   </div>
