@@ -12,9 +12,9 @@
                   <app-pick-gio [LichChieu]="phim.LichChieu" (eventChonNgay)="chonNgayParent($event)"></app-pick-gio>
                 </div>
                 <div class="ds-ghe pt-5">
-                  <p class="tbChonNgay text-center pt-5" *ngIf="!statusChonNgay; else datGhe">Quý khách vui lòng chọn ngày thời gian đặt vé</p>
+                  <p class="tbChonNgay text-center pt-5" *ngIf="!statusChonNgay; else datGhe">Vui lòng chọn ngày thời gian đặt vé</p>
                   <ng-template #datGhe>
-                    <app-list-ghe [listGhe]="listGhe"></app-list-ghe>
+                    <app-list-ghe [listGhe]="listGhe" (eventDatVe)="datVeParent($event)"></app-list-ghe>
                   </ng-template>
                 </div>
               </div>
@@ -29,6 +29,11 @@
             <div class="name-phim text-center pt-2">
               {{phim.TenPhim}}
             </div>
+          </div>
+          <div class="btn-thanhtoan animated bounceIn" *ngIf="statusChonNgay">
+            <p class="text-center">
+              <i class="fa fa-check-circle" (click)="xacNhanVe()"></i>
+            </p>
           </div>
         </div>
       </div>

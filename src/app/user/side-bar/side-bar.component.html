@@ -1,20 +1,14 @@
 <nav class="sidebar" [ngClass]="{'sidebar-sm': clickSM}">
   <!-- Logo -->
   <div class="sidebar-header d-flex align-items-center justify-content-center">
-    <div class="logo">
-    </div>
-    <div class="logo-name ml-2 animated fadeIn" *ngIf="!clickSM">
-      <p>NOT just</p>
-      <p>CINEMA</p>
-    </div>
-  </div>
-  <!-- Timer -->
-  <div class="sidebar-clock text-center">
-    <p>12:50</p>
+    <a href="#" [routerLink]="['/']">
+      <div class="logo">
+      </div>
+    </a>
   </div>
   <div class="userLogin">
-    <div class="login" data-toggle="modal" data-target="#popupLogin" *ngIf="statusLogin; else user">
-      <p class="text-center">
+    <div class="login d-flex align-items-center justify-content-center" data-toggle="modal" data-target="#popupLogin" *ngIf="statusLogin; else user">
+      <p class="text-center m-0">
         <span *ngIf="!clickSM;else login" class="animated fadeIn">ĐĂNG NHẬP</span>
         <ng-template #login>
           <i class="fa fa-sign-in animated fadeIn"></i>
@@ -23,14 +17,13 @@
     </div>
     <ng-template #user>
       <div class="user-dn" (click)="ClickUser()">
-        <p class="text-center icon-user">
+        <p class="text-center icon-user m-0">
           <i class="fa fa-user-circle-o"></i>
           <br>
         </p>
       </div>
       <div class="user-dn-hover text-center">
-        <p class="content-hover">Tiến Đạt</p>
-        <p class="content-hover">Trang Cá Nhân</p>
+        <p class="content-hover mt-3">Trang Cá Nhân</p>
         <p class="content-hover">Lịch sử</p>
         <p class="content-hover" (click)="DangXuat()">Thoát</p>
       </div>

@@ -20,3 +20,16 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Time coutdown */
+
+.time {
+  font-size: 40px;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold;
+}
+
+/* TB Chọn Ghế */
+
+.tbChonGhe {
+  font-size: 20px;
+}

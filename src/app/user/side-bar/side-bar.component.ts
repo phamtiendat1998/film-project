@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import $ from 'jquery';
 declare var $: any;
 @Component({
@@ -8,7 +8,7 @@ declare var $: any;
 })
 export class SideBarComponent implements OnInit {
   public clickSM: boolean = false;
-  public statusLogin: boolean = true;
+  @Input() statusLogin: boolean = true;
   public statusUser: boolean = false;
   constructor() { }
 

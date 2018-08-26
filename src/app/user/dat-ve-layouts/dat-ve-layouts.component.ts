@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhimService } from '../../services/phim.service';
 import { Phim } from '../../Model/Phim';
+import { ListGheComponent } from '../list-ghe/list-ghe.component';
 
 @Component({
   selector: 'app-dat-ve-layouts',
@@ -9,10 +10,13 @@ import { Phim } from '../../Model/Phim';
   styleUrls: ['./dat-ve-layouts.component.css']
 })
 export class DatVeLayoutsComponent implements OnInit {
+  @ViewChild(ListGheComponent) listghe: ListGheComponent;
   public statusChonNgay: boolean = false;
   public maPhim: string;
   public phim: Phim;
   public listGhe: any;
+  public listVe = [];
+  public maLichChieu: string;
   constructor(private Activate: ActivatedRoute, private phimSV: PhimService) { }
 
   ngOnInit() {
@@ -22,12 +26,14 @@ export class DatVeLayoutsComponent implements OnInit {
         this.phimSV.layChiTietPhim(this.maPhim).subscribe(
           (kq: any) => {
             this.phim = kq;
+            console.log(this.phim);
           }
         )
       }
     )
   }
   chonNgayParent(thamso) {
+    this.maLichChieu = thamso.MaLichChieu;
     this.statusChonNgay = thamso.Status;
     this.phimSV.layChiTietPhongVe(thamso.MaLichChieu).subscribe(
       (kq: any) => {
@@ -37,5 +43,15 @@ export class DatVeLayoutsComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+  datVeParent(thamso) {
+    this.listVe = thamso;
+  }
+  xacNhanVe() {
+    this.listghe.ktGhe();
+    // let taikhoanUser = localStorage.getItem('userLogin');
+    // console.log(taikhoanUser);
+    // console.log(this.listVe);
+    // console.log(this.maLichChieu);
   }
 }

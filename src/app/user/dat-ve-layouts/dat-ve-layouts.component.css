@@ -16,13 +16,13 @@
 
 .info-phim {
   width: 100%;
-  height: 90%;
+  height: 550px;
   background-color: #FFCE00;
 }
 
 .img-phim {
   width: 100%;
-  height: 80%;
+  height: 450px;
 }
 
 .img-phim img {
@@ -32,7 +32,6 @@
 }
 
 .name-phim {
-  height: 20%;
   font-size: 30px;
   color: black;
   /* text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold; */
@@ -43,4 +42,25 @@
 .tbChonNgay {
   font-size: 30px;
   color: white;
+}
+
+/* BTN Thanh toán */
+
+.btn-thanhtoan {
+  height: 10%;
+  font-size: 40px;
+  cursor: pointer;
+  color: #FFCE00;
+}
+
+.btn-thanhtoan p i {
+  transition: all 0.2s;
+}
+
+.btn-thanhtoan p {
+  margin: 0;
+}
+
+.btn-thanhtoan p i:hover {
+  transform: scale(1.2, 1.2);
 }

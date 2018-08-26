@@ -1,7 +1,13 @@
-<div class="screen">
+<div class="coutdownTime">
+  <p class="time text-white text-center" *ngIf="statusCoutdown; else tbOutTime">{{coutdownTimeMi}}:{{coutdownTimeSe}}</p>
+  <ng-template #tbOutTime>
+    <p class="time text-white text-center animated fadeIn">Hết thời gian đặt ghế!</p>
+  </ng-template>
+</div>
+<div class="screen" *ngIf="statusCoutdown">
   <p class="text-center animated fadeIn">SCREEN</p>
 </div>
-<div class="list-chair">
+<div class="list-chair" *ngIf="statusCoutdown">
   <div class="container">
     <div class="row">
       <div class="col-3 text-center">
@@ -16,7 +22,7 @@
     </div>
   </div>
 </div>
-<div class="note-chair animated fadeIn">
+<div class="note-chair animated fadeIn" *ngIf="statusCoutdown">
   <div class="container">
     <div class="row px-5 py-5">
       <div class="col-3">
@@ -30,6 +36,11 @@
         <p class="text-white">Ghế đã chọn</p>
       </div>
       <div class="col-3">
+      </div>
+      <div class="col-12">
+        <p class="text-center text-danger tbChonGhe" *ngIf="statusChonGhe">
+          <i class="fa fa-times"></i> Vui lòng chọn ghế
+        </p>
       </div>
     </div>
   </div>

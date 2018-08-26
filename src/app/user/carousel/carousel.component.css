@@ -8,14 +8,34 @@ img {
 
 .carousel-control-next,
 .carousel-control-prev {
-  /* position: absolute; */
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   bottom: 25%;
   top: auto;
   z-index: 400;
-  border: 2px solid #FFCE00;
+  border: 2px solid transparent;
   border-radius: 20px;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  animation-name: border;
+  animation-duration: 1.5s;
+}
+
+@keyframes border {
+  0% {
+    border-top: 2px solid #FFCE00;
+  }
+  25% {
+    border-right: 2px solid #FFCE00;
+  }
+  50% {
+    border-bottom: 2px solid #FFCE00;
+  }
+  100% {
+    border-left: 2px solid #FFCE00;
+  }
 }
 
 .carousel-item {
@@ -52,6 +72,7 @@ img {
 }
 
 .info-news {
+  cursor: pointer;
   position: absolute;
   width: 300px;
   height: 100px;
@@ -61,10 +82,20 @@ img {
   color: #908199;
   animation-duration: 2s;
   box-shadow: 0 8px 6px -6px black;
+  transition: all 0.5s;
+}
+
+.info-news:hover {
+  background-color: black;
+}
+
+.info-news:hover .title-news {
+  transform: scale(1.2, 1.2);
 }
 
 .title-news {
   color: #FFCE00;
+  transition: all 0.2s;
 }
 
 .carousel-title {

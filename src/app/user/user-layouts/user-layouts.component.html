@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="side-bar d-flex">
     <app-search-bar></app-search-bar>
-    <app-side-bar></app-side-bar>
+    <app-side-bar [statusLogin]="statusDangNhap"></app-side-bar>
   </div>
   <div class="carousel" id="home">
     <app-carousel></app-carousel>
@@ -10,7 +10,6 @@
     <div id="phim">
       <app-list-phim></app-list-phim>
     </div>
-
     <!-- <app-news></app-news> -->
   </div>
   <!-- Modal Trailer -->
@@ -32,7 +31,7 @@
     <div class="modal-dialog popupLoginDialog" role="document">
       <div class="modal-content">
         <div class="modal-body text-center">
-          <app-dang-nhap></app-dang-nhap>
+          <app-dang-nhap (trangthaiDN)="statusDN($event)"></app-dang-nhap>
         </div>
       </div>
     </div>

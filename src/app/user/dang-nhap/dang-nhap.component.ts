@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { NguoiDung } from '../../Model/nguoidung';
 import { NguoiDungService } from '../../services/nguoi-dung.service';
 import { NgForm } from '@angular/forms';
@@ -11,6 +11,7 @@ declare var $: any;
   styleUrls: ['./dang-nhap.component.css']
 })
 export class DangNhapComponent implements OnInit {
+  @Output() trangthaiDN = new EventEmitter();
   @ViewChild('formDangNhap') formDN: NgForm;
   public status: boolean = false;
   public validDN: boolean = true;
@@ -58,7 +59,8 @@ export class DangNhapComponent implements OnInit {
                 $('.closeLogin').trigger("click");
                 that.CloseDN();
               }, 1000)
-              localStorage.setItem('userLogin', JSON.stringify(kq));
+              localStorage.setItem('userLogin', JSON.stringify(kq.TaiKhoan));
+              that.trangthaiDN.emit(that.validDN);
               that.auth.DangNhap();
             }
           },
