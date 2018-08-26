@@ -20,11 +20,13 @@ export class DangNhapComponent implements OnInit {
   Stwich() {
     if (this.status === false) {
       // Đăng nhập
+      this.validDN = true;
       this.status = true;
       this.formDN.reset();
       $('.load').css("display", "none");
     } else {
       // Đăng kí
+      this.validDN = true;
       this.status = false;
       this.formDN.reset();
       $('.load').css("display", "none");

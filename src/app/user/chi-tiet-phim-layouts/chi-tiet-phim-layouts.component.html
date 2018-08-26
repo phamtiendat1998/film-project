@@ -1,66 +1,60 @@
-<div class="film">
-  <div class="banner-film">
-    <div class="info-banner-film">
-      <div class="container pt-5">
-        <div class="row">
-          <div class="col-6">
-            <div class="info">
-              <div class="btn-3d-max mb-4">
-                4D MAX
+<div class="wrapper">
+  <div class="side-bar d-flex">
+    <app-search-bar></app-search-bar>
+    <app-side-bar></app-side-bar>
+  </div>
+  <div class="content">
+    <div class="film">
+      <div class="banner-film">
+        <div class="info-banner-film">
+          <div class="container pt-5">
+            <div class="row">
+              <div class="col-6">
+                <div class="info">
+                  <div class="btn-3d-max mb-4">
+                    4D MAX
+                  </div>
+                  <p class="name-film text-white">{{phim.TenPhim}}</p>
+                  <p class="sub-film text-white">{{phim.MoTa}}
+                  </p>
+                </div>
               </div>
-              <p class="name-film text-white">{{phim.TenPhim}}</p>
-              <p class="sub-film text-white">{{phim.MoTa}}
-              </p>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="text-center item-phim">
-              <img [src]="phim.HinhAnh" alt="" class="img-phim">
-              <div class="btn-play" data-toggle="modal" data-target="#modalTrailer" (click)="UrlTrailer(phim.Trailer,phim.TenPhim)">
-                <i class="fa fa-play-circle-o"></i>
+              <div class="col-6">
+                <div class="text-center item-phim">
+                  <img [src]="phim.HinhAnh" alt="" class="img-phim">
+                  <div class="btn-play" data-toggle="modal" data-target="#modalTrailer" (click)="UrlTrailer(phim.Trailer,phim.TenPhim)">
+                    <i class="fa fa-play-circle-o"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="detail-film">
-    <div class="container">
-      <div class="row">
-        <!-- <div class="col-6 pt-5">
-          <div class="row">
-            <div class="col-12">
-              <p class="title-dien-vien">Diễn Viên</p>
-            </div>
-            <div class="col-4">
-              <app-item-dien-vien></app-item-dien-vien>
-            </div>
-            <div class="col-4">
-              <app-item-dien-vien></app-item-dien-vien>
-            </div>
-            <div class="col-4">
-              <app-item-dien-vien></app-item-dien-vien>
-            </div>
-          </div>
-        </div> -->
-        <div class="col-6">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Trailer -->
-<div id="modalTrailer" class="modal fade" id="modalTrailer" tabindex="-1" role="dialog" aria-labelledby="modalTrailerLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div data-dismiss="modal" class="btn-close-trailer" (click)="closeTrailer()">
-          <i class="fa fa-times"></i>
+    <!-- Modal Trailer -->
+    <div id="modalTrailer" class="modal fade" id="modalTrailer" tabindex="-1" role="dialog" aria-labelledby="modalTrailerLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div data-dismiss="modal" class="btn-close-trailer" (click)="closeTrailer()">
+              <i class="fa fa-times"></i>
+            </div>
+            <app-popup-trailer></app-popup-trailer>
+          </div>
         </div>
-        <app-popup-trailer></app-popup-trailer>
+      </div>
+    </div>
+    <!-- Modal Đăng Nhập -->
+    <div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="popupLoginLabel" aria-hidden="true">
+      <div class="modal-dialog popupLoginDialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <app-dang-nhap></app-dang-nhap>
+          </div>
+        </div>
       </div>
     </div>
   </div>

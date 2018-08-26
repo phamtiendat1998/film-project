@@ -17,5 +17,10 @@ export class PhimService {
     let obServe: Observable<any> = this._http.get(urlCTP).map((result: Response) => result.json());
     return obServe;
   }
+  layChiTietPhongVe(malichchieu) {
+    let urlPhongVe = `http://sv2.myclass.vn/api/QuanLyPhim/ChiTietPhongVe?MaLichChieu=${malichchieu}`;
+    let obServe = this._http.get(urlPhongVe).map((result: Response) => result.json());
+    return obServe;
+  }
   constructor(private _http: Http) { }
 }

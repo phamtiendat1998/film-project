@@ -24,14 +24,20 @@ import { DatVeLayoutsComponent } from './dat-ve-layouts/dat-ve-layouts.component
 import { ItemGheComponent } from './item-ghe/item-ghe.component';
 import { FormsModule } from '@angular/forms';
 import { LoadItemComponent } from './load-item/load-item.component';
+import { ChonPhimComponent } from './chon-phim/chon-phim.component';
+import { ChonGheComponent } from './chon-ghe/chon-ghe.component';
+import { ThanhToanComponent } from './thanh-toan/thanh-toan.component';
+import { AnouThongBaoComponent } from './anou-thong-bao/anou-thong-bao.component';
+import { PickGioComponent } from './pick-gio/pick-gio.component';
+import { ListGheComponent } from './list-ghe/list-ghe.component';
 
 @NgModule({
   imports: [
     CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule, FormsModule
   ],
-  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent],
+  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, ChonPhimComponent, ChonGheComponent, ThanhToanComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent],
   exports: [
-    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent
+    SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, ChonPhimComponent, ChonGheComponent, ThanhToanComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent
   ]
 })
 export class UserModule { }

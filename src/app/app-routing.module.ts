@@ -6,13 +6,14 @@ import { AdminLayoutComponent } from "./admin/admin-layout/admin-layout.componen
 import { QuanLyPhimComponent } from "./admin/quan-ly-phim/quan-ly-phim.component";
 import { QuanLyNguoiDungComponent } from "./admin/quan-ly-nguoi-dung/quan-ly-nguoi-dung.component";
 import { LoginAdminComponent } from "./admin/login-admin/login-admin.component";
-import { HeaderAdminComponent } from "./admin/header-admin/header-admin.component";
 import { TrangchuAdminComponent } from "./admin/trangchu-admin/trangchu-admin.component";
 import { ChiTietPhimLayoutsComponent } from "./user/chi-tiet-phim-layouts/chi-tiet-phim-layouts.component";
 import { ItemGheComponent } from "./user/item-ghe/item-ghe.component";
+import { DatVeLayoutsComponent } from "./user/dat-ve-layouts/dat-ve-layouts.component";
 const appRoute: Routes = [
   { path: "", component: UserLayoutsComponent },
   { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
+  { path: 'datve/:maphim', component: DatVeLayoutsComponent },
   { path: 'ghe', component: ItemGheComponent },
   {
     path: "admin", component: LoginAdminComponent

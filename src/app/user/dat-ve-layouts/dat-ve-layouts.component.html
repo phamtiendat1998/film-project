@@ -1,3 +1,37 @@
-<p>
-  dat-ve-layouts works!
-</p>
+<div class="datve-layout px-5">
+  <div class="container-fluid">
+    <div class="thanh-dieu-huong pt-3">
+      <div class="row">
+        <div class="col-12 mb-5">
+        </div>
+        <div class="col-9">
+          <div class="content">
+            <div class="row">
+              <div class="col-12">
+                <div class="pick-gio">
+                  <app-pick-gio [LichChieu]="phim.LichChieu" (eventChonNgay)="chonNgayParent($event)"></app-pick-gio>
+                </div>
+                <div class="ds-ghe pt-5">
+                  <p class="tbChonNgay text-center pt-5" *ngIf="!statusChonNgay; else datGhe">Quý khách vui lòng chọn ngày thời gian đặt vé</p>
+                  <ng-template #datGhe>
+                    <app-list-ghe [listGhe]="listGhe"></app-list-ghe>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="info-phim">
+            <div class="img-phim">
+              <img [src]="phim.HinhAnh" alt="">
+            </div>
+            <div class="name-phim text-center pt-2">
+              {{phim.TenPhim}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

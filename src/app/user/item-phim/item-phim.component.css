@@ -66,6 +66,10 @@
   text-shadow: 0 0 2px black, 0 0 4px black, 0 0 8px black, 0 0 16px black, 0 0 32px black, 0 0 64px black;
 }
 
+.card-phim:hover img {
+  filter: blur(1.5px);
+}
+
 /* ------ */
 
 .card-hover-content {
