@@ -8,6 +8,12 @@ import { PhimService } from '../../services/phim.service';
 })
 export class QuanLyPhimComponent implements OnInit {
   mangPhim:string[] = [];
+  key: string = 'name'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
 
   constructor(private PhimSV:PhimService) { }
 
@@ -21,7 +27,7 @@ export class QuanLyPhimComponent implements OnInit {
           console.log(error);
         }
       );
-    }, 5000);
+    }, 2000);
   }
 
 }

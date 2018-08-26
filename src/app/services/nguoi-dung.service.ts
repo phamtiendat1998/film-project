@@ -25,5 +25,34 @@ export class NguoiDungService {
     let obServe: Observable<any> = this._http.post(urlDangNhap, user).map((result: Response) => result.json());
     return obServe;
   }
+  KiemTraDangNhap():boolean{
+    let nguoiDung =localStorage.getItem("localNguoiDung");
+    if(nguoiDung != null){
+      return true;
+    }
+    return false;
+  }
+  LayThongTinDangNhap():NguoiDung{
+    if (this.KiemTraDangNhap()) {
+      let nguoiDung:NguoiDung = JSON.parse(localStorage.getItem('localNguoiDung'));
+      return nguoiDung;
+    }
+    return null;
+  }
+  DangXuat():void{
+    localStorage.removeItem('localNguoiDung');
+  }
+  XoaNguoiDung(user: NguoiDung) {
+    let urlXoa = `http://sv2.myclass.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`;
+    let obServe: Observable<any> = this._http.delete(urlXoa).map((result: Response) => result.json());
+    return obServe;
+  }
+  capNhatNguoiDung(user: NguoiDung) {
+    let urlCapNhat = `http://sv2.myclass.vn/api/QuanLyNguoiDung/CapNhatThongTin`;
+    let headerCapNhat = new Headers();
+    headerCapNhat.append("Content-Type", "application/json;charset=UTF-8");
+    let obServe: Observable<any> = this._http.post(urlCapNhat, user, { headers: headerCapNhat }).map((result: Response) => result.json());
+    return obServe;
+  }
   constructor(private _http: Http) { }
 }

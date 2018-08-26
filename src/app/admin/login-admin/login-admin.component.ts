@@ -11,11 +11,31 @@ import { NgForm } from '../../../../node_modules/@angular/forms';
 })
 export class LoginAdminComponent implements OnInit {
   @ViewChild("formDangNhap") formDN: NgForm;
+  KiemTraDangNhap():boolean{
+    let nguoiDung =localStorage.getItem("localNguoiDung");
+    if(nguoiDung != null){
+      return true;
+    }
+    return false;
+  }
+  LayThongTinDang9Nhap():NguoiDung{
+    if (this.KiemTraDangNhap()) {
+      let nguoiDung:NguoiDung = JSON.parse(localStorage.getItem('localNguoiDung'));
+      return nguoiDung;
+    }
+    return null;
+  }
+  DangXuat():void{
+    localStorage.removeItem('localNguoiDung');
+    this.router.navigate(['admin']);
+  }
   DangNhap(value: NguoiDung) {
     value.MaLoaiNguoiDung ="QuanTri";
     this.nguoiDungSV.dangNhapNguoiDung(value).subscribe((kq:any)=>{
       if (value.MaLoaiNguoiDung == kq.MaLoaiNguoiDung) {
-        this.router.navigate(['admintrangchu/charts']);
+        
+          this.router.navigate(['admintrangchu/charts']);
+       
       }else{
         this.router.navigate(['admin']);
       }

@@ -9,9 +9,12 @@ import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
 import { ChartModule } from '../../../node_modules/angular2-highcharts';
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { FormsModule } from "@angular/forms";
+import{NgxPaginationModule} from "ngx-pagination";
+import{Ng2SearchPipeModule} from "ng2-search-filter";
+import { Ng2OrderModule } from "ng2-order-pipe";
 @NgModule({
   imports: [
-    CommonModule,ChartModule,RouterModule,FormsModule
+    CommonModule,ChartModule,RouterModule,FormsModule,NgxPaginationModule,Ng2SearchPipeModule,Ng2OrderModule
   ],
   declarations: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent],
   exports:[LoginAdminComponent,HeaderAdminComponent,AdminLayoutComponent,TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent]

@@ -12,7 +12,14 @@ declare var $: any;
 })
 export class QuanLyNguoiDungComponent implements OnInit {
   @ViewChild("formDangKy") formDK: NgForm;
+  @ViewChild("formCapNhat") formCN: NgForm;
   mangNguoiDung: any[] = [];
+  key: string = 'name'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
   DangKy(value: NguoiDung) {
     // this.mangNguoiDung.push(value);
     // localStorage.setItem(
@@ -24,29 +31,74 @@ export class QuanLyNguoiDungComponent implements OnInit {
       (kq: any) => {
         //console.log(kq)
         this.mangNguoiDung.unshift(value);
+        this.formDK.reset();
       },
       error => {
         console.log(error);
       }
     );
   }
+  Sua(thamso){
+    let taikhoan = thamso.getAttribute("data-taiKhoan");
+    let matkhau = thamso.getAttribute("data-matKhau");
+    let hoten = thamso.getAttribute("data-hoTen");
+    let email = thamso.getAttribute("data-email");
+    let sodt = thamso.getAttribute("data-soDT");
+    let maloainguoidung = thamso.getAttribute("data-maLoaiNguoiDung");
+    this.formCN.setValue({
+      TaiKhoan:taikhoan,
+      MatKhau:matkhau,
+      HoTen:hoten,
+      Email:email,
+      SoDT:sodt,
+      MaLoaiNguoiDung:maloainguoidung,
+    })
+
+  }
+  CapNhat(value:NguoiDung){
+    value.MaNhom = "GP03";
+    this.nguoiDungSV.capNhatNguoiDung(value).subscribe(
+      (kq: any) => {
+        //console.log(kq)
+        this.LayDSND();
+        this.formCN.reset();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  LayDSND(){
+    this.nguoiDungSV.layDanhSachNguoiDung().subscribe(
+      (kq: any) => {
+        this.mangNguoiDung = kq;
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  XoaNguoiDung(value){
+    this.nguoiDungSV.XoaNguoiDung(value).subscribe((kq:any)=>{
+      console.log(kq);
+      this.LayDSND();
+    }, error => {
+      console.log(error);
+    }
+  );
+  }
   constructor(private nguoiDungSV: NguoiDungService) { }
 
   ngOnInit() {
     setTimeout(() => {
-      this.nguoiDungSV.layDanhSachNguoiDung().subscribe(
-        (kq: any) => {
-          this.mangNguoiDung = kq;
-        },
-        error => {
-          console.log(error);
-        }
-      );
+      this.LayDSND();
     }, 2000);
 
-    $('body').delegate('#btnDong', 'click', function() {
-      $('#btnDongForm').trigger('click');
-  });
+    $('#btnDong').click(function(){
+      {
+        $('#btnDongForm').trigger('click');
+    }
+    });
   }
 
 }
