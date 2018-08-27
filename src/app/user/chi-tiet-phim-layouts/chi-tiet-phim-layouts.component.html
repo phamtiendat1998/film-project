@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="side-bar d-flex">
     <app-search-bar></app-search-bar>
-    <app-side-bar></app-side-bar>
+    <app-side-bar [statusLogin]="statusDangNhap"></app-side-bar>
   </div>
   <div class="content">
     <div class="film">
       <div class="banner-film">
-        <div class="info-banner-film">
+        <div class="info-banner-film" *ngIf="statusError">
           <div class="container pt-5">
             <div class="row">
               <div class="col-6">
@@ -30,31 +30,58 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Modal Trailer -->
-    <div id="modalTrailer" class="modal fade" id="modalTrailer" tabindex="-1" role="dialog" aria-labelledby="modalTrailerLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div data-dismiss="modal" class="btn-close-trailer" (click)="closeTrailer()">
-              <i class="fa fa-times"></i>
+        <div class="ngay-khoi-chieu" *ngIf="statusError">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <p class="text-center text-white">Khởi chiếu vào : {{phim.NgayKhoiChieu | date:'dd - MM - yyyy'}}</p>
+              </div>
             </div>
-            <app-popup-trailer></app-popup-trailer>
           </div>
+        </div>
+        <div class="share">
+          <p class="text-center m-0">
+            <i class="iconSocial fa fa-facebook px-4"></i>
+            <i class="iconSocial fa fa-skype px-4"></i>
+            <i class="iconSocial fa fa-google-plus px-4"></i>
+            <i class="iconSocial fa fa-instagram px-4"></i>
+            <i class="iconSocial fa fa-steam px-4"></i>
+          </p>
         </div>
       </div>
     </div>
-    <!-- Modal Đăng Nhập -->
-    <div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="popupLoginLabel" aria-hidden="true">
-      <div class="modal-dialog popupLoginDialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body text-center">
-            <app-dang-nhap></app-dang-nhap>
-          </div>
+  </div>
+  <div class="danhgia">
+    <img src="./../../../assets/img/film.jpg" alt="">
+    <div class="cont-danhgia">
+      <div class="container">
+        <app-danh-gia></app-danh-gia>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal Trailer -->
+<div id="modalTrailer" class="modal fade" id="modalTrailer" tabindex="-1" role="dialog" aria-labelledby="modalTrailerLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div data-dismiss="modal" class="btn-close-trailer" (click)="closeTrailer()">
+          <i class="fa fa-times"></i>
         </div>
+        <app-popup-trailer></app-popup-trailer>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Đăng Nhập -->
+<div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="popupLoginLabel" aria-hidden="true">
+  <div class="modal-dialog popupLoginDialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <app-dang-nhap (trangthaiDN)="statusDN($event)"></app-dang-nhap>
       </div>
     </div>
   </div>

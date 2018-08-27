@@ -13,12 +13,14 @@ import { PopupTrailerComponent } from '../popup-trailer/popup-trailer.component'
 })
 export class ChiTietPhimLayoutsComponent implements OnInit {
   @ViewChild(PopupTrailerComponent) popupTrailer: PopupTrailerComponent;
+  public statusDangNhap: boolean;
   public maPhim: string;
   public phim: Phim;
   public statusTrailer: boolean = true;
   public st: boolean = false;
   public trailer: string;
   public popupTraler = [];
+  public statusError: boolean = false;
   constructor(private Activate: ActivatedRoute, private phimSV: PhimService, private transURL: TransformTrailerService) { }
   ngOnInit() {
     this.Activate.params.subscribe(
@@ -27,6 +29,7 @@ export class ChiTietPhimLayoutsComponent implements OnInit {
         this.phimSV.layChiTietPhim(this.maPhim).subscribe(
           (kq: any) => {
             this.phim = kq;
+            this.statusError = true;
             console.log(kq);
           }
         )
@@ -44,6 +47,9 @@ export class ChiTietPhimLayoutsComponent implements OnInit {
     this.transURL.TransformURL(this.popupTraler);
   }
   closeTrailer() {
-    this.popupTrailer.close(this.st);
+    this.popupTrailer.close();
+  }
+  statusDN(thamso) {
+    this.statusDangNhap = !thamso;
   }
 }

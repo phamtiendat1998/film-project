@@ -12,9 +12,13 @@ export class ItemPhimComponent implements OnInit {
   public trailer: string;
   public popupTraler = [];
   public statusTrailer: boolean = true;
+  public statusDatVe: boolean = true;
   constructor(private transURL: TransformTrailerService) { }
 
   ngOnInit() {
+    if (this.phimItem.NgayKhoiChieu == null || this.phimItem.MaPhim > 200) {
+      this.statusDatVe = false;
+    }
   }
   UrlTrailer(url: string, ten: string) {
     if (url.search('watch') !== -1) {
@@ -24,7 +28,6 @@ export class ItemPhimComponent implements OnInit {
     } else {
       this.popupTraler = [this.trailer, ten, this.statusTrailer];
     }
-
     this.transURL.TransformURL(this.popupTraler);
   }
 }

@@ -1,5 +1,5 @@
 export class Phim {
-  public MaPhim: string;
+  public MaPhim: number;
   public TenPhim: string;
   public Trailer: string;
   public HinhAnh: string;

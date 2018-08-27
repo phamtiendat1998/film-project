@@ -9,10 +9,6 @@
   z-index: 500;
 }
 
-.carousel {
-  background-color: #0c0c0c;
-}
-
 .content {
   padding-left: 110px;
   width: 100%;
@@ -26,35 +22,21 @@
   background-color: #0c0c0c;
 }
 
-.banner-film {
-  position: relative;
-  height: 100vh;
-}
-
 .img-film {
   height: 100%;
 }
 
-img {
+.item-phim img {
   width: 450px;
   height: 600px;
-  /* box-shadow: 0px -45px 110px 50px #0c0c0c inset; */
   border-radius: 10px;
   box-shadow: 0px 0px 30px 3px black;
 }
 
 .info-banner-film {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 100vh;
   z-index: 200;
-}
-
-.container,
-.row {
-  height: 100%;
 }
 
 .info {
@@ -73,11 +55,33 @@ img {
   color: white;
   font-size: 70px;
   font-weight: bolder;
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
 }
 
 .sub-film {
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.share {
+  background-color: #0c0c0c;
+  padding-bottom: 40px;
+  padding-top: 10px;
+}
+
+.share h4 {
+  font-size: 20px;
+}
+
+.share p {
+  font-size: 30px;
+}
+
+.share i {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.share i:hover {
+  color: #FFCE00;
 }
 
 .item-phim {
@@ -91,9 +95,10 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #D4D4D1;
+  color: white;
   cursor: pointer;
   transition: all 0.5s;
+  opacity: 0.5;
 }
 
 .btn-play:hover img {
@@ -101,7 +106,42 @@ img {
 }
 
 .btn-play:hover {
-  text-shadow: 0 0 5px gold, 0 0 10px gold;
+  opacity: 1;
+}
+
+/* Khởi chiếu */
+
+.ngay-khoi-chieu {
+  background-color: #0c0c0c;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.ngay-khoi-chieu p {
+  font-size: 30px;
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
+}
+
+/* Đánh giá */
+
+.danhgia {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.danhgia img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(10%);
+}
+
+.danhgia .cont-danhgia {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Modal Trailer */
@@ -114,7 +154,7 @@ img {
   background-color: black;
 }
 
-.modal-body {
+#modalTrailer .modal-body {
   padding: 0;
 }
 
@@ -132,4 +172,11 @@ img {
 .btn-close-trailer i:hover {
   color: white;
   text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
+}
+
+/* MODAL LOGIN */
+
+.popupLoginDialog {
+  max-width: 670px;
+  overflow: hidden;
 }

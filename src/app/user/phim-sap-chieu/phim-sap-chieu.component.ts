@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PhimService } from '../../services/phim.service';
 import { Phim } from '../../Model/Phim';
+import { PhimService } from '../../services/phim.service';
 
 @Component({
-  selector: 'app-phim-dang-chieu',
-  templateUrl: './phim-dang-chieu.component.html',
-  styleUrls: ['./phim-dang-chieu.component.css']
+  selector: 'app-phim-sap-chieu',
+  templateUrl: './phim-sap-chieu.component.html',
+  styleUrls: ['./phim-sap-chieu.component.css']
 })
-export class PhimDangChieuComponent implements OnInit {
+export class PhimSapChieuComponent implements OnInit {
   public dsphim: Phim[] = [];
   public dsphimGroup: Phim[] = [];
   public group = 0;
@@ -18,7 +18,7 @@ export class PhimDangChieuComponent implements OnInit {
     this.phimSV.layDanhSachPhim().subscribe(
       (kq: any) => {
         for (let i = 0; i < kq.length; i++) {
-          if (kq[i].MaPhim < 200) {
+          if (kq[i].MaPhim > 200) {
             this.dsphim.push(kq[i]);
           }
         }

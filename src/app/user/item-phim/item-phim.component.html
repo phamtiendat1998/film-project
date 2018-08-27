@@ -20,7 +20,7 @@
       <span class="mr-4 animated fadeInLeft">Chi tiết</span>
       <i class="fa fa-outdent"></i>
     </div>
-    <div class="card-hover-content datve" [routerLink]="['/datve',phimItem.MaPhim]">
+    <div class="card-hover-content datve" [routerLink]="['/datve',phimItem.MaPhim]" *ngIf="statusDatVe">
       <span class="mr-4 animated fadeInLeft">Đặt vé</span>
       <i class="fa fa-shopping-cart"></i>
     </div>

@@ -9,7 +9,7 @@ import { TransformTrailerService } from '../../services/transform-trailer.servic
 export class PopupTrailerComponent implements OnInit {
   public urlPhim;
   public ten;
-  public status: boolean = false;
+  public status: boolean;
   constructor(private URL: TransformTrailerService) { }
   ngOnInit() {
     this.URL.transform.subscribe(
@@ -22,7 +22,9 @@ export class PopupTrailerComponent implements OnInit {
       }
     )
   }
-  close(st) {
-    this.status = st;
+  close() {
+    this.status = false;
+    let popupTraler = ["", "", this.status];
+    this.URL.TransformURL(popupTraler);
   }
 }
