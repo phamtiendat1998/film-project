@@ -2,6 +2,8 @@ import { Phim } from './../../Model/Phim';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PhimService } from '../../services/phim.service';
 import { NgForm } from '../../../../node_modules/@angular/forms';
+import * as $ from 'jquery';
+declare var $: any;
 
 @Component({
   selector: 'app-quan-ly-phim',
@@ -18,21 +20,22 @@ export class QuanLyPhimComponent implements OnInit {
     this.key = key;
     this.reverse = !this.reverse;
   }
-  themPhim(phim:Phim, HinhAnh) {
+  themPhim(value:Phim, HinhAnh) {
+    value.MaNhom = "GP03";
+    value.HinhAnh = HinhAnh[0].name;
     console.log(HinhAnh[0]);
-
-    phim.MaNhom = "GP03";
-    phim.HinhAnh = HinhAnh[0].name;
-    this.PhimSV.ThemPhim(phim).subscribe(
+    this.PhimSV.ThemPhim(value).subscribe(
       (kq) => {
-        this.PhimSV.ThemHinhAnh(HinhAnh[0], phim.TenPhim).subscribe(
+        this.PhimSV.ThemHinhAnh(HinhAnh[0], value.TenPhim).subscribe(
           (kqThemHinhAnh) => {
             console.log(kqThemHinhAnh);
           }
         )
-        this.mangPhim.unshift(kq);
-        this.LayDSP();
-        this.formTP.reset();
+        setTimeout(()=>{
+          this.LayDSP();
+          this.formTP.reset();
+          $('#btnDongformTP').trigger('click');
+        },2000)
       },
       (error) => {
         console.log(error);
@@ -56,13 +59,19 @@ export class QuanLyPhimComponent implements OnInit {
       DanhGia:danhgia,
   })
 }
-CapNhatPhim(value:Phim){
+CapNhatPhim(value:Phim,HinhAnh){
   value.MaNhom = "GP03";
+  value.HinhAnh = HinhAnh[0].name;
   this.PhimSV.capNhatPhim(value).subscribe(
     (kq) => {
-     
+      this.PhimSV.ThemHinhAnh(HinhAnh[0], value.TenPhim).subscribe(
+        (kqThemHinhAnh) => {
+          console.log(kqThemHinhAnh);
+        }
+      )
       this.LayDSP();
       this.formCNP.reset();
+      $('#btnDongformCNP').trigger('click');
     },
     (error) => {
       console.log(error);

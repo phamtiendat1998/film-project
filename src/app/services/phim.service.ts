@@ -1,4 +1,4 @@
-import { Phim } from './../Model/Phim';
+import { Phim } from '../Model/Phim';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from "rxjs";
@@ -31,11 +31,11 @@ export class PhimService {
     return obServe;
   }
   ThemHinhAnh(fileHinh, tenPhim) {
-    let url = `http://sv2.myclass.vn/api/QuanLyPhim/UploadFile`;
+    let urlThemPhim = `http://sv2.myclass.vn/api/QuanLyPhim/UploadFile`;
     let formData = new FormData();
     formData.append('Files', fileHinh);
     formData.append('TenPhim', tenPhim);
-    let obServe = this._http.post(url, formData).map((result: Response) => result.json());
+    let obServe:Observable<any> = this._http.post(urlThemPhim, formData).map((result: Response) => result.json());
     return obServe;
   }
   XoaPhim(phim: Phim) {

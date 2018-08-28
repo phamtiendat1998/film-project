@@ -32,6 +32,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
         //console.log(kq)
         this.mangNguoiDung.unshift(value);
         this.formDK.reset();
+        $('#btnDongForm').trigger('click');
       },
       error => {
         console.log(error);
@@ -62,6 +63,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
         //console.log(kq)
         this.LayDSND();
         this.formCN.reset();
+        $('#btnDongformCN').trigger('click');
       },
       error => {
         console.log(error);

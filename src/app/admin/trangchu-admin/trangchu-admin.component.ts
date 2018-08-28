@@ -7,86 +7,67 @@ declare var $: any;
   styleUrls: ['./trangchu-admin.component.css']
 })
 export class TrangchuAdminComponent implements OnInit {
-    private data = [
-        {
-            name: 'USA',
-            data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
-                1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
-                27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
-                26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
-                24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
-                22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
-                10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
-        },
-        {
-            name: 'USSR/Russia',
-            data: [null, null, null, null, null, null, null, null, null, null,
-                5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
-                4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
-                15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
-                33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
-                35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
-                21000, 20000, 19000, 18000, 18000, 17000, 16000]
-        }];
-
-
-renderChart(){
-    $('#pieChartDemo').highcharts({
-        chart: {
-            type: 'area'
-        },
-        title: {
-            text: 'US and USSR nuclear stockpiles'
-        },
-        subtitle: {
-            text: 'Source: thebulletin.metapress.com'
-        },
-        xAxis: {
-            allowDecimals: false,
-            labels: {
-                formatter: function () {
-                    return this.value;
-                }
-            }
-        },
-        yAxis: {
-            title: {
-                text: 'Nuclear weapon states'
-            },
-            labels: {
-                formatter: function () {
-                    return this.value / 1000 + 'k';
-                }
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name} produced <b>{point.y:,.0f}</b>' +
-                         '<br/>warheads in {point.x}'
-        },
-        plotOptions: {
-            area: {
-                pointStart: 1940,
-                marker: {
-                    enabled: false,
-                    symbol: 'circle',
-                    radius: 2,
-                    states: {
-                        hover: {
-                            enabled: true
-                        }
-                    }
-                }
-            }
-        },
-        series: this.data
-    });
-}
+    public barChartOptions:any = {
+        scaleShowVerticalLines: false,
+        responsive: true
+      };
+      public barChartLabels:string[] = ['2011', '2012', '2013', '2014', '2015', '2016', '2017'];
+      public barChartType:string = 'bar';
+      public barChartLegend:boolean = true;
+     
+      public barChartData:any[] = [
+        {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+        {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+      ];
+     
+      // events
+      public chartClicked(e:any):void {
+        console.log(e);
+      }
+     
+      public chartHovered(e:any):void {
+        console.log(e);
+      }
+     
+      public randomize():void {
+        // Only Change 3 values
+        let data = [
+          Math.round(Math.random() * 100),
+          59,
+          80,
+          (Math.random() * 100),
+          56,
+          (Math.random() * 100),
+          40];
+        let clone = JSON.parse(JSON.stringify(this.barChartData));
+        clone[0].data = data;
+        this.barChartData = clone;
+        /**
+         * (My guess), for Angular to recognize the change in the dataset
+         * it has to change the dataset variable directly,
+         * so one way around it, is to clone the data, change it and then
+         * assign it;
+         */
+      }
+       // Pie
+  public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
+  public pieChartData:number[] = [300, 500, 100];
+  public pieChartType:string = 'pie';
+ 
+  // events
+  public chartClickedPie(e:any):void {
+    console.log(e);
+  }
+ 
+  public chartHoveredPie(e:any):void {
+    console.log(e);
+  }
 
 
   constructor() { }
 
   ngOnInit() {
-    this.renderChart();
+    
 
   }
 
