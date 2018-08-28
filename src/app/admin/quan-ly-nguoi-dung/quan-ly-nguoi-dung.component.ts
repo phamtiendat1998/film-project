@@ -16,7 +16,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
   mangNguoiDung: any[] = [];
   key: string = 'name'; //set default
   reverse: boolean = false;
-  sort(key){
+  sort(key) {
     this.key = key;
     this.reverse = !this.reverse;
   }
@@ -39,7 +39,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
       }
     );
   }
-  Sua(thamso){
+  Sua(thamso) {
     let taikhoan = thamso.getAttribute("data-taiKhoan");
     let matkhau = thamso.getAttribute("data-matKhau");
     let hoten = thamso.getAttribute("data-hoTen");
@@ -47,16 +47,16 @@ export class QuanLyNguoiDungComponent implements OnInit {
     let sodt = thamso.getAttribute("data-soDT");
     let maloainguoidung = thamso.getAttribute("data-maLoaiNguoiDung");
     this.formCN.setValue({
-      TaiKhoan:taikhoan,
-      MatKhau:matkhau,
-      HoTen:hoten,
-      Email:email,
-      SoDT:sodt,
-      MaLoaiNguoiDung:maloainguoidung,
+      TaiKhoan: taikhoan,
+      MatKhau: matkhau,
+      HoTen: hoten,
+      Email: email,
+      SoDT: sodt,
+      MaLoaiNguoiDung: maloainguoidung,
     })
 
   }
-  CapNhat(value:NguoiDung){
+  CapNhat(value: NguoiDung) {
     value.MaNhom = "GP03";
     this.nguoiDungSV.capNhatNguoiDung(value).subscribe(
       (kq: any) => {
@@ -70,7 +70,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
       }
     );
   }
-  LayDSND(){
+  LayDSND() {
     this.nguoiDungSV.layDanhSachNguoiDung().subscribe(
       (kq: any) => {
         this.mangNguoiDung = kq;
@@ -80,14 +80,14 @@ export class QuanLyNguoiDungComponent implements OnInit {
       }
     );
   }
-  XoaNguoiDung(value){
-    this.nguoiDungSV.XoaNguoiDung(value).subscribe((kq:any)=>{
+  XoaNguoiDung(value) {
+    this.nguoiDungSV.XoaNguoiDung(value).subscribe((kq: any) => {
       console.log(kq);
       this.LayDSND();
     }, error => {
       console.log(error);
     }
-  );
+    );
   }
   constructor(private nguoiDungSV: NguoiDungService) { }
 
@@ -96,10 +96,10 @@ export class QuanLyNguoiDungComponent implements OnInit {
       this.LayDSND();
     }, 2000);
 
-    $('#btnDong').click(function(){
+    $('#btnDong').click(function () {
       {
         $('#btnDongForm').trigger('click');
-    }
+      }
     });
   }
 

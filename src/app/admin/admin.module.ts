@@ -8,15 +8,19 @@ import { QuanLyNguoiDungComponent } from './quan-ly-nguoi-dung/quan-ly-nguoi-dun
 import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { FormsModule } from "@angular/forms";
-import{NgxPaginationModule} from "ngx-pagination";
-import{Ng2SearchPipeModule} from "ng2-search-filter";
+import { NgxPaginationModule } from "ngx-pagination";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { Ng2OrderModule } from "ng2-order-pipe";
 import { ChartsModule } from 'ng2-charts';
 @NgModule({
   imports: [
+<<<<<<< HEAD
     CommonModule,RouterModule,FormsModule,NgxPaginationModule,Ng2SearchPipeModule,Ng2OrderModule,ChartsModule
+=======
+    CommonModule, ChartModule, RouterModule, FormsModule, NgxPaginationModule, Ng2SearchPipeModule, Ng2OrderModule
+>>>>>>> 21d765aa40fbbc616fc743e23a27bd3bd30ffafa
   ],
   declarations: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent],
-  exports:[LoginAdminComponent,HeaderAdminComponent,AdminLayoutComponent,TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent]
+  exports: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent]
 })
 export class AdminModule { }

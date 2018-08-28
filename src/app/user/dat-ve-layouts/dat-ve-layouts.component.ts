@@ -11,6 +11,7 @@ import { ListGheComponent } from '../list-ghe/list-ghe.component';
 })
 export class DatVeLayoutsComponent implements OnInit {
   @ViewChild(ListGheComponent) listghe: ListGheComponent;
+  public statusError: boolean = false;
   public statusChonNgay: boolean = false;
   public maPhim: string;
   public phim: Phim;
@@ -25,8 +26,8 @@ export class DatVeLayoutsComponent implements OnInit {
         this.maPhim = kq['maphim'];
         this.phimSV.layChiTietPhim(this.maPhim).subscribe(
           (kq: any) => {
+            this.statusError = true;
             this.phim = kq;
-            console.log(this.phim);
           }
         )
       }
