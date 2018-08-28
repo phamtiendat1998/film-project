@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .side-bar {
@@ -10,16 +11,15 @@
 }
 
 .content {
+  background-image: radial-gradient(circle, #66560f, #0c0c0c, black);
   padding-left: 110px;
   width: 100%;
-  right: 0;
-  background-color: #0c0c0c;
   z-index: 99;
 }
 
 .film {
   width: 100%;
-  background-color: #0c0c0c;
+  background-color: transparent;
 }
 
 .img-film {
@@ -62,9 +62,9 @@
 }
 
 .share {
-  background-color: #0c0c0c;
+  background-color: #0c0c0c59;
   padding-bottom: 40px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .share h4 {
@@ -76,6 +76,7 @@
 }
 
 .share i {
+  color: white;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -112,9 +113,8 @@
 /* Khởi chiếu */
 
 .ngay-khoi-chieu {
-  background-color: #0c0c0c;
-  padding-top: 40px;
-  padding-bottom: 10px;
+  background-color: #0c0c0c59;
+  padding-top: 20px;
 }
 
 .ngay-khoi-chieu p {
@@ -125,9 +125,11 @@
 /* Đánh giá */
 
 .danhgia {
+  padding-left: 110px;
   width: 100%;
   height: 100vh;
   position: relative;
+  background-color: black;
 }
 
 .danhgia img {
@@ -137,6 +139,7 @@
 }
 
 .danhgia .cont-danhgia {
+  padding-left: 110px;
   position: absolute;
   top: 0;
   left: 0;

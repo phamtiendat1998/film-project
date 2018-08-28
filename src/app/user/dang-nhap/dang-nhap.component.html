@@ -20,8 +20,10 @@
   </div>
   <div class="sign-with-tk mt-5">
     <div class="canhbao">
-      <p class="text-danger animated zoomIn" *ngIf="!validDN">KIỂM TRA LẠI TÀI KHOẢN VÀ MẬT KHẨU</p>
-      <p class="text-success animated zoomIn dnSuc">ĐĂNG NHẬP THÀNH CÔNG</p>
+      <p class="text-danger animated zoomIn" *ngIf="!validDN">
+        <i class="tbfalse-icon fa fa-times pr-3"></i>KIỂM TRA LẠI THÔNG TIN</p>
+      <p class="text-success animated zoomIn dnSuc">
+        <i class="tbfalse-icon fa fa-check pr-3"></i>THÀNH CÔNG</p>
     </div>
     <div class="sign-with-content">
       <div>
@@ -37,7 +39,7 @@
             "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'>
       </div>
       <!-- ----- -->
-      <button type="submit" class="btn-dn btn-dangnhap" (click)="DangNhap()">
+      <button type="submit" class="btn-dn btn-dangnhap">
         <app-load-item class="load"></app-load-item>
         <span *ngIf="!status;else man3" class="animated fadeIn text-dn-dk">ĐĂNG NHẬP</span>
         <ng-template #man3>

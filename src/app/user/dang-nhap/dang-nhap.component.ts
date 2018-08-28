@@ -44,21 +44,10 @@ export class DangNhapComponent implements OnInit {
           (kq: any) => {
             if (kq == 'Tài khoản hoặc mật khẩu không đúng !') {
               // Fail
-              that.validDN = false;
-              $('.load').css("display", "none");
-              $('.text-dn-dk').css("display", "block");
-              $('.dnSuc').css("display", "none");
+              that.Fail();
             } else {
               // True
-              $('.load').css("display", "none");
-              $('.text-dn-dk').css("display", "block");
-              $('.dnSuc').css("display", "block");
-              that.validDN = true;
-              that.formDN.reset();
-              setTimeout(function () {
-                $('.closeLogin').trigger("click");
-                that.CloseDN();
-              }, 1000)
+              that.Succes();
               localStorage.setItem('userLogin', JSON.stringify(kq.TaiKhoan));
               that.trangthaiDN.emit(that.validDN);
               that.auth.DangNhap();
@@ -69,12 +58,41 @@ export class DangNhapComponent implements OnInit {
           }
         )
       } else {
-        // Đăng kí
-        // TODO
-        // Reset form các thứ
+        obj.MaNhom = "GP03";
+        obj.MaLoaiNguoiDung = "KhachHang";
+        that.nguoidungSV.dangKyNguoiDung(obj).subscribe(
+          (kq: any) => {
+            if (typeof (kq) == "object") {
+              // True
+              that.Succes();
+            } else {
+              that.Fail();
+            }
+          },
+          (error) => {
+            that.Fail();
+          }
+        )
       }
     }, 1500)
-
+  }
+  Fail() {
+    this.validDN = false;
+    $('.load').css("display", "none");
+    $('.text-dn-dk').css("display", "block");
+    $('.dnSuc').css("display", "none");
+  }
+  Succes() {
+    let that = this;
+    $('.load').css("display", "none");
+    $('.text-dn-dk').css("display", "block");
+    $('.dnSuc').css("display", "block");
+    this.validDN = true;
+    this.formDN.reset();
+    setTimeout(function () {
+      $('.closeLogin').trigger("click");
+      that.CloseDN();
+    }, 1000)
   }
   CloseDN() {
     this.status = false;

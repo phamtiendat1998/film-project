@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import $ from 'jquery';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-side-bar',
@@ -10,7 +11,7 @@ export class SideBarComponent implements OnInit {
   public clickSM: boolean = false;
   @Input() statusLogin: boolean = true;
   public statusUser: boolean = false;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     // Scroll thu nhỏ
@@ -44,6 +45,7 @@ export class SideBarComponent implements OnInit {
   DangXuat() {
     localStorage.removeItem("userLogin");
     this.statusLogin = true;
+    this.router.navigate(['/']);
   }
   GetUser() {
     let userLogin = localStorage.getItem("userLogin");

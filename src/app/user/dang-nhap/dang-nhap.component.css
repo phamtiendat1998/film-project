@@ -102,9 +102,9 @@
   padding: 10px 15px;
 }
 
-/* .sign-with-tk .sign-with-content div input:focus {
-  outline: none;
-} */
+.tbfalse-icon {
+  font-size: 25px;
+}
 
 .btn-dn {
   padding: 10px 15px;

@@ -21,6 +21,7 @@ export class ChiTietPhimLayoutsComponent implements OnInit {
   public trailer: string;
   public popupTraler = [];
   public statusError: boolean = false;
+  public listFilm = [];
   constructor(private Activate: ActivatedRoute, private phimSV: PhimService, private transURL: TransformTrailerService) { }
   ngOnInit() {
     this.Activate.params.subscribe(
@@ -30,7 +31,6 @@ export class ChiTietPhimLayoutsComponent implements OnInit {
           (kq: any) => {
             this.phim = kq;
             this.statusError = true;
-            console.log(kq);
           }
         )
       }
