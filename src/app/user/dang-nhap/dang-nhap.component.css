@@ -142,7 +142,7 @@
 }
 
 input {
-  transition: all 0.5s;
+  transition: all 0.2s;
   outline: none;
 }
 
@@ -154,14 +154,14 @@ input:focus::placeholder {
   color: black;
   font-weight: bold;
   padding-left: 10%;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 /* INPUT VALIDATION */
 
 input.ng-invalid.ng-touched {
-  border: none;
-  background-color: #f7857194;
+  border: 1px solid red;
+  /* background-color: #f7857194; */
 }
 
 input.ng-valid {
