@@ -91,7 +91,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form #formThemPhim="ngForm" (ngSubmit)="themPhim(formThemPhim.value,HinhAnh.files)">
+        <form #formThemPhim="ngForm" (ngSubmit)="themPhim(formThemPhim.value,hinhAnh.files)">
           <div class="form-group">
             <label for="">Tên Phim: </label>
             <input type="text" class="form-control" required #TenPhim="ngModel" name="TenPhim" ngModel>
@@ -108,7 +108,7 @@
           </div>
           <div class="form-group">
             <label for="">Hình Ảnh: </label>
-            <input type="file" #HinhAnh >
+            <input type="file" #hinhAnh >
           </div>
           <div class="form-group">
             <label for="">Mô Tả: </label>

@@ -23,10 +23,10 @@ export class QuanLyPhimComponent implements OnInit {
   themPhim(value:Phim, HinhAnh) {
     value.MaNhom = "GP03";
     value.HinhAnh = HinhAnh[0].name;
-    console.log(HinhAnh[0]);
+    console.log( HinhAnh[0]);
     this.PhimSV.ThemPhim(value).subscribe(
       (kq) => {
-        this.PhimSV.ThemHinhAnh(HinhAnh[0], value.TenPhim).subscribe(
+        this.PhimSV.ThemHinhAnh( HinhAnh[0], value.TenPhim).subscribe(
           (kqThemHinhAnh) => {
             console.log(kqThemHinhAnh);
           }
