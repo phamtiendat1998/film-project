@@ -3,6 +3,7 @@ import { NguoiDungService } from '../../services/nguoi-dung.service';
 import * as $ from 'jquery';
 import { NgForm } from '../../../../node_modules/@angular/forms';
 import { NguoiDung } from '../../Model/nguoidung';
+import swal from 'sweetalert2';
 declare var $: any;
 
 @Component({
@@ -32,6 +33,12 @@ export class QuanLyNguoiDungComponent implements OnInit {
         //console.log(kq)
         this.mangNguoiDung.unshift(value);
         this.formDK.reset();
+        swal({
+          type: 'success',
+          title: 'Thêm thành công',
+          showConfirmButton: false,
+          timer: 2000
+        })
         $('#btnDongForm').trigger('click');
       },
       error => {
@@ -63,6 +70,12 @@ export class QuanLyNguoiDungComponent implements OnInit {
         //console.log(kq)
         this.LayDSND();
         this.formCN.reset();
+        swal({
+          type: 'success',
+          title: 'Cập nhật thành công',
+          showConfirmButton: false,
+          timer: 2000
+        })
         $('#btnDongformCN').trigger('click');
       },
       error => {
@@ -82,7 +95,23 @@ export class QuanLyNguoiDungComponent implements OnInit {
   }
   XoaNguoiDung(value) {
     this.nguoiDungSV.XoaNguoiDung(value).subscribe((kq: any) => {
-      console.log(kq);
+      swal({
+        title: 'Bạn có chắc?',
+        text: "bạn muốn xóa người dùng này!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          swal(
+            'Đã Xóa!',
+            'Bạn xóa thành công người dùng này.',
+            'success'
+          )
+        }
+      })
       this.LayDSND();
     }, error => {
       console.log(error);
