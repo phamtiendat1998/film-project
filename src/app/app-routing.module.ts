@@ -8,13 +8,13 @@ import { QuanLyNguoiDungComponent } from "./admin/quan-ly-nguoi-dung/quan-ly-ngu
 import { LoginAdminComponent } from "./admin/login-admin/login-admin.component";
 import { TrangchuAdminComponent } from "./admin/trangchu-admin/trangchu-admin.component";
 import { ChiTietPhimLayoutsComponent } from "./user/chi-tiet-phim-layouts/chi-tiet-phim-layouts.component";
-import { ItemGheComponent } from "./user/item-ghe/item-ghe.component";
 import { DatVeLayoutsComponent } from "./user/dat-ve-layouts/dat-ve-layouts.component";
+import { TrangCaNhanLayoutsComponent } from "./user/trang-ca-nhan-layouts/trang-ca-nhan-layouts.component";
 const appRoute: Routes = [
   { path: "", component: UserLayoutsComponent },
   { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
   { path: 'datve/:maphim', component: DatVeLayoutsComponent },
-  { path: 'ghe', component: ItemGheComponent },
+  { path: 'trangcanhan', component: TrangCaNhanLayoutsComponent },
   {
     path: "admin", component: LoginAdminComponent
   },

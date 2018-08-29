@@ -8,9 +8,17 @@ import { Phim } from '../../Model/Phim';
 })
 export class ItemPhimSearchComponent implements OnInit {
   @Input() film: Phim;
+  public statusDatVe: boolean = true;
   constructor() { }
 
   ngOnInit() {
-
+    let Now = new Date();
+    let timeFilm = Date.parse(this.film.NgayKhoiChieu);
+    let timeNow = Now.getTime();
+    let offset = timeNow - timeFilm;
+    // ------------------------
+    if (offset < 0) {
+      this.statusDatVe = false;
+    }
   }
 }

@@ -36,7 +36,7 @@ export class SideBarComponent implements OnInit {
   ClickUser() {
     if (this.statusUser == true) {
       this.statusUser = false;
-      $('.user-dn-hover').css("height", "120px");
+      $('.user-dn-hover').css("height", "70px");
     } else {
       this.statusUser = true;
       $('.user-dn-hover').css("height", "0");

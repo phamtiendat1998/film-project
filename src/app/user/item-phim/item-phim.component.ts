@@ -16,7 +16,12 @@ export class ItemPhimComponent implements OnInit {
   constructor(private transURL: TransformTrailerService) { }
 
   ngOnInit() {
-    if (this.phimItem.NgayKhoiChieu == null || this.phimItem.MaPhim > 200) {
+    let Now = new Date();
+    let timeFilm = Date.parse(this.phimItem.NgayKhoiChieu);
+    let timeNow = Now.getTime();
+    let offset = timeNow - timeFilm;
+    // ------------------------
+    if (offset < 0) {
       this.statusDatVe = false;
     }
   }

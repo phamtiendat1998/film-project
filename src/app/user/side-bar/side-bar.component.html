@@ -7,7 +7,8 @@
     </a>
   </div>
   <div class="userLogin">
-    <div class="login d-flex align-items-center justify-content-center" data-toggle="modal" data-target="#popupLogin" *ngIf="statusLogin; else user">
+    <div class="login d-flex align-items-center justify-content-center" data-toggle="modal" data-target="#popupLogin"
+      *ngIf="statusLogin; else user">
       <p class="text-center m-0">
         <span *ngIf="!clickSM;else login" class="animated fadeIn">ĐĂNG NHẬP</span>
         <ng-template #login>
@@ -23,8 +24,7 @@
         </p>
       </div>
       <div class="user-dn-hover text-center">
-        <p class="content-hover mt-3">Trang Cá Nhân</p>
-        <p class="content-hover">Lịch sử</p>
+        <p class="content-hover trangcanhan mt-3" [routerLink]="['/trangcanhan']">Trang Cá Nhân</p>
         <p class="content-hover" (click)="DangXuat()">Thoát</p>
       </div>
     </ng-template>

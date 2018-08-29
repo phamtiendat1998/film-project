@@ -4,6 +4,7 @@ import { NguoiDungService } from '../../services/nguoi-dung.service';
 import { NgForm } from '@angular/forms';
 import $ from 'jquery';
 import { AuthService } from '../../services/auth.service';
+import { TransformUserService } from '../../services/transform-user.service';
 declare var $: any;
 @Component({
   selector: 'app-dang-nhap',
@@ -15,7 +16,7 @@ export class DangNhapComponent implements OnInit {
   @ViewChild('formDangNhap') formDN: NgForm;
   public status: boolean = false;
   public validDN: boolean = true;
-  constructor(private nguoidungSV: NguoiDungService, private auth: AuthService) { }
+  constructor(private nguoidungSV: NguoiDungService, private auth: AuthService, private tranUser: TransformUserService) { }
   ngOnInit() {
   }
   Stwich() {
@@ -48,9 +49,11 @@ export class DangNhapComponent implements OnInit {
             } else {
               // True
               that.Succes();
-              localStorage.setItem('userLogin', JSON.stringify(kq.TaiKhoan));
+              localStorage.setItem('userLogin', JSON.stringify(kq));
               that.trangthaiDN.emit(that.validDN);
               that.auth.DangNhap();
+              // Lưu user trên service
+              that.tranUser.TransformUser(kq);
             }
           },
           (error) => {

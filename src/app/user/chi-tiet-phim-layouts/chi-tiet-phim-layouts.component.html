@@ -47,6 +47,11 @@
             <i class="iconSocial fa fa-instagram px-4"></i>
             <i class="iconSocial fa fa-steam px-4"></i>
           </p>
+          <div class="datve-ngay text-center pt-4" *ngIf="statusLichChieu">
+            <div class="btnDatVe" [routerLink]="['/datve',phim.MaPhim]">
+              <p>ĐẶT VÉ NGAY</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -58,9 +63,6 @@
         <app-danh-gia></app-danh-gia>
       </div>
     </div>
-  </div>
-  <div class="phim-able">
-
   </div>
 </div>
 

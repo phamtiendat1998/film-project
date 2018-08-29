@@ -9,7 +9,7 @@
         <i class="fa fa-outdent"></i> Chi tiết
       </p>
     </div>
-    <div [routerLink]="['/datve',film.MaPhim]">
+    <div [routerLink]="['/datve',film.MaPhim]" *ngIf="statusDatVe">
       <p class="btn-film">
         <i class="fa fa-shopping-cart"></i> Đặt vé
       </p>

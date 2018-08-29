@@ -28,13 +28,15 @@
     <div class="sign-with-content">
       <div>
         <input type="text" placeholder="TÀI KHOẢN" #taikhoan='ngModel' ngModel name="TaiKhoan" required [pattern]='"^[a-z0-9_-]{3,16}$"'>
-        <input type="password" placeholder="MẬT KHẨU" #matkhau='ngModel' ngModel name="MatKhau" required minlength="3" maxlength="15">
+        <input type="password" placeholder="MẬT KHẨU" #matkhau='ngModel' ngModel name="MatKhau" required minlength="3"
+          maxlength="15">
       </div>
       <div class="dangky" [ngClass]="{'dangky-show': status}">
         <input type="text" placeholder="EMAIL" #email='ngModel' ngModel name="Email" required [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 		+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"'>
         <input type="text" placeholder="SỐ ĐIỆN THOẠI" #sdt='ngModel' ngModel name="SoDT" required [pattern]='"^[0-9]{10,11}$"'>
-        <input type="text" placeholder="HỌ VÀ TÊN" class="hoten" #hoten='ngModel' ngModel name="HoTen" required [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+        <input type="text" placeholder="HỌ VÀ TÊN" class="hoten" #hoten='ngModel' ngModel name="HoTen" required
+          [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
             "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
             "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"'>
       </div>

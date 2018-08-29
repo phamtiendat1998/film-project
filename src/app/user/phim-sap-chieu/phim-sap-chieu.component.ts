@@ -15,10 +15,16 @@ export class PhimSapChieuComponent implements OnInit {
   constructor(private phimSV: PhimService) { }
 
   ngOnInit() {
+    // Time Now
+    let Now = new Date();
     this.phimSV.layDanhSachPhim().subscribe(
       (kq: any) => {
         for (let i = 0; i < kq.length; i++) {
-          if (kq[i].MaPhim > 200) {
+          let timeFilm = Date.parse(kq[i].NgayKhoiChieu);
+          let timeNow = Now.getTime();
+          let offset = timeNow - timeFilm;
+          // ------------------------
+          if (offset < 0) {
             this.dsphim.push(kq[i]);
           }
         }
