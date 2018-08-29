@@ -36,22 +36,24 @@ export class ListGheComponent implements OnInit, OnChanges {
     }, 1000);
   }
   ngOnChanges(changes: SimpleChanges): void {
-    // Dùng xử lý khi tham số input thay đổi
-    this.listGheTrai = [];
-    this.listGheGiua = [];
-    this.listGhePhai = [];
-    this.listVe = [];
-    for (let i = 0; i < this.listGhe.length; i++) {
-      if (i < 12) {
-        this.listGheTrai.push(this.listGhe[i]);
-      } else if (i >= 12 && i < 48) {
-        this.listGheGiua.push(this.listGhe[i]);
-      } else {
-        this.listGhePhai.push(this.listGhe[i]);
+    if (this.listGhe !== undefined) {
+      // Dùng xử lý khi tham số input thay đổi
+      this.listGheTrai = [];
+      this.listGheGiua = [];
+      this.listGhePhai = [];
+      this.listVe = [];
+      for (let i = 0; i < this.listGhe.length; i++) {
+        if (i < 12) {
+          this.listGheTrai.push(this.listGhe[i]);
+        } else if (i >= 12 && i < 48) {
+          this.listGheGiua.push(this.listGhe[i]);
+        } else {
+          this.listGhePhai.push(this.listGhe[i]);
+        }
       }
+      $('.list-chair').removeClass('animated bounceIn');
+      this.statusChonGhe = false;
     }
-    $('.list-chair').removeClass('animated bounceIn');
-    this.statusChonGhe = false;
   }
   datGheParent(thamso) {
     if (thamso.Status) {
