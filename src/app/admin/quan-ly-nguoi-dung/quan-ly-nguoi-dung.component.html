@@ -85,7 +85,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Thêm Người Dùng</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span id="btnDongForm" aria-hidden="true">&times;</span>
         </button>
@@ -94,50 +94,50 @@
         <form #formDangKy="ngForm" (ngSubmit)="DangKy(formDangKy.value)">
           <div class="form-group">
             <label for="TaiKhoan">Tài Khoản:</label>
-            <input type="text" required #taikhoan="ngModel" class="form-control txtF" name="TaiKhoan" ngModel>
-            <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
-              <div class="alert alert-danger" *ngIf="taikhoan.errors.required">Vui lòng nhập tài khoản ! </div>
-            </div>
-          </div>
+            <input class="form-control" required type="text" #TaiKhoan='ngModel' placeholder="Tài Khoản" name="TaiKhoan" ngModel>
+            <div *ngIf="TaiKhoan.errors && (TaiKhoan.touched || TaiKhoan.dirty)">
+          <div class="alert alert-danger" *ngIf="TaiKhoan.errors.required">Vui lòng nhập tài khoản ! </div>
+        </div>
+        </div>
           <div class="form-group">
             <label for="MatKhau">Mật Khẩu:</label>
-            <input type="password" minlength="3" maxlength="15" required #matkhau="ngModel" class="form-control txtF" name="MatKhau" ngModel>
-            <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)">
-              <div class="alert alert-danger" *ngIf="matkhau.errors.required">Vui lòng nhập mật khẩu ! </div>
-              <div *ngIf="(matkhau.errors.minlength || matkhau.errors.maxlength) ">
+            <input type="password" minlength="3" maxlength="15" required #MatKhau="ngModel" class="form-control txtF" name="MatKhau" ngModel>
+            <div *ngIf="MatKhau.errors && (MatKhau.touched || MatKhau.dirty)">
+              <div class="alert alert-danger" *ngIf="MatKhau.errors.required">Vui lòng nhập mật khẩu ! </div>
+              <div *ngIf="(MatKhau.errors.minlength || MatKhau.errors.maxlength) ">
                 <div class="alert alert-danger">mật khẩu từ 3 đến 15 ký tự ! </div>
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="HoTen">Họ Tên:</label>
-            <input type="text" required #hoten='ngModel' [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+            <input type="text" required #HoTen='ngModel' [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
                 "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềếểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +"ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"' class="form-control txtF"
               name="HoTen" ngModel>
-            <div *ngIf="hoten.errors && (hoten.touched || hoten.dirty)">
-              <div class="alert alert-danger" *ngIf="hoten.errors.required">Vui lòng nhập họ tên ! </div>
-              <div *ngIf="hoten.errors.pattern">
+            <div *ngIf="HoTen.errors && (HoTen.touched || HoTen.dirty)">
+              <div class="alert alert-danger" *ngIf="HoTen.errors.required">Vui lòng nhập họ tên ! </div>
+              <div *ngIf="HoTen.errors.pattern">
                 <div class="alert alert-danger">Vui lòng nhập vào chữ ! </div>
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="Email">Email:</label>
-            <input type="email" required #email="ngModel" [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+            <input type="email" required #Email="ngModel" [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"' class="form-control txtF" name="Email" ngModel>
-            <div *ngIf="email.errors && (email.touched || email.dirty)">
-                <div class="alert alert-danger" *ngIf="email.errors.required">Vui lòng nhập Email ! </div>
-                <div *ngIf="email.errors.pattern">
+            <div *ngIf="Email.errors && (Email.touched || Email.dirty)">
+                <div class="alert alert-danger" *ngIf="Email.errors.required">Vui lòng nhập Email ! </div>
+                <div *ngIf="Email.errors.pattern">
                   <div class="alert alert-danger">Vui lòng nhập đúng định dạng Email! </div>
                 </div>
               </div>
           </div>
           <div class="form-group">
             <label for="SoDT">Số Điện Thoại:</label>
-            <input type="text" required minlength="10" maxlength="11" #sodt='ngModel' class="form-control txtF" name="SoDT" ngModel>
-            <div *ngIf="sodt.errors && (sodt.touched || sodt.dirty)">
-                <div class="alert alert-danger" *ngIf="sodt.errors.required">Vui lòng nhập số điện thoại ! </div>
-                <div *ngIf="(sodt.errors.minlength || sodt.errors.maxlength) ">
+            <input type="text" required minlength="10" maxlength="11" #SoDT='ngModel' class="form-control txtF" name="SoDT" ngModel>
+            <div *ngIf="SoDT.errors && (SoDT.touched || SoDT.dirty)">
+                <div class="alert alert-danger" *ngIf="SoDT.errors.required">Vui lòng nhập số điện thoại ! </div>
+                <div *ngIf="(SoDT.errors.minlength || SoDT.errors.maxlength) ">
                     <div class="alert alert-danger">Số điện thoại 10 số hoặc 11 số ! </div>
                   </div>
                 <!-- <div *ngIf="sodt.errors.pattern">
@@ -179,43 +179,43 @@
             </div>
             <div class="form-group">
               <label for="MatKhau">Mật Khẩu:</label>
-              <input type="password" minlength="3" maxlength="15" required #matkhau="ngModel" class="form-control txtF" name="MatKhau" ngModel>
-              <div *ngIf="matkhau.errors && (matkhau.touched || matkhau.dirty)">
-                <div class="alert alert-danger" *ngIf="matkhau.errors.required">Vui lòng nhập mật khẩu ! </div>
-                <div *ngIf="(matkhau.errors.minlength || matkhau.errors.maxlength) ">
+              <input type="password" minlength="3" maxlength="15" required #MatKhau="ngModel" class="form-control txtF" name="MatKhau" ngModel>
+              <div *ngIf="MatKhau.errors && (MatKhau.touched || MatKhau.dirty)">
+                <div class="alert alert-danger" *ngIf="MatKhau.errors.required">Vui lòng nhập mật khẩu ! </div>
+                <div *ngIf="(MatKhau.errors.minlength || MatKhau.errors.maxlength) ">
                   <div class="alert alert-danger">mật khẩu từ 3 đến 15 ký tự ! </div>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <label for="HoTen">Họ Tên:</label>
-              <input type="text" required #hoten='ngModel' [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
+              <input type="text" required #HoTen='ngModel' [pattern]='"^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
                   "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềếểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +"ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"' class="form-control txtF"
                 name="HoTen" ngModel>
-              <div *ngIf="hoten.errors && (hoten.touched || hoten.dirty)">
-                <div class="alert alert-danger" *ngIf="hoten.errors.required">Vui lòng nhập họ tên ! </div>
-                <div *ngIf="hoten.errors.pattern">
+              <div *ngIf="HoTen.errors && (HoTen.touched || HoTen.dirty)">
+                <div class="alert alert-danger" *ngIf="HoTen.errors.required">Vui lòng nhập họ tên ! </div>
+                <div *ngIf="HoTen.errors.pattern">
                   <div class="alert alert-danger">Vui lòng nhập vào chữ ! </div>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <label for="Email">Email:</label>
-              <input type="email" required #email="ngModel" [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+              <input type="email" required #Email="ngModel" [pattern]='"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
               + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"' class="form-control txtF" name="Email" ngModel>
-              <div *ngIf="email.errors && (email.touched || email.dirty)">
-                  <div class="alert alert-danger" *ngIf="email.errors.required">Vui lòng nhập Email ! </div>
-                  <div *ngIf="email.errors.pattern">
+              <div *ngIf="Email.errors && (Email.touched || Email.dirty)">
+                  <div class="alert alert-danger" *ngIf="Email.errors.required">Vui lòng nhập Email ! </div>
+                  <div *ngIf="Email.errors.pattern">
                     <div class="alert alert-danger">Vui lòng nhập đúng định dạng Email! </div>
                   </div>
                 </div>
             </div>
             <div class="form-group">
               <label for="SoDT">Số Điện Thoại:</label>
-              <input type="text" required minlength="10" maxlength="11" #sodt='ngModel' class="form-control txtF" name="SoDT" ngModel>
-              <div *ngIf="sodt.errors && (sodt.touched || sodt.dirty)">
+              <input type="text" required minlength="10" maxlength="11" #SoDT='ngModel' class="form-control txtF" name="SoDT" ngModel>
+              <div *ngIf="SoDT.errors && (SoDT.touched || SoDT.dirty)">
                   <div class="alert alert-danger" *ngIf="sodt.errors.required">Vui lòng nhập số điện thoại ! </div>
-                  <div *ngIf="(sodt.errors.minlength || sodt.errors.maxlength) ">
+                  <div *ngIf="(SoDT.errors.minlength || SoDT.errors.maxlength) ">
                       <div class="alert alert-danger">Số điện thoại 10 số hoặc 11 số ! </div>
                     </div>
                   <!-- <div *ngIf="sodt.errors.pattern">

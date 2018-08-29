@@ -159,14 +159,11 @@ input:focus::placeholder {
 
 /* INPUT VALIDATION */
 
-input.ng-invalid.ng-touched {
-  border: 1px solid red;
-  /* background-color: #f7857194; */
+input.ng-invalid.ng-touched{
+  border: 2px solid red;
 }
-
-input.ng-valid {
-  border: 1px solid #6bd09878;
-  /* background-color: #6bd09878; */
+input.ng-valid.ng-touched {
+border: 2px solid green;
 }
 
 /* Load */

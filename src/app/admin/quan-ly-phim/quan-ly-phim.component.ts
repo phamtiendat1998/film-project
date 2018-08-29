@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { PhimService } from '../../services/phim.service';
 import { NgForm } from '../../../../node_modules/@angular/forms';
 import * as $ from 'jquery';
+import swal from 'sweetalert2';
 declare var $: any;
 
 @Component({
@@ -32,6 +33,12 @@ export class QuanLyPhimComponent implements OnInit {
           }
         )
         setTimeout(()=>{
+          swal({
+            type: 'success',
+            title: 'Thêm thành công',
+            showConfirmButton: false,
+            timer: 2000
+          })
           this.LayDSP();
           this.formTP.reset();
           $('#btnDongformTP').trigger('click');
@@ -69,6 +76,12 @@ CapNhatPhim(value:Phim,HinhAnh){
           console.log(kqThemHinhAnh);
         }
       )
+      swal({
+        type: 'success',
+        title: 'Cập nhật thành công',
+        showConfirmButton: false,
+        timer: 2000
+      })
       this.LayDSP();
       this.formCNP.reset();
       $('#btnDongformCNP').trigger('click');
@@ -81,7 +94,23 @@ CapNhatPhim(value:Phim,HinhAnh){
 }
 XoaPhim(value){
   this.PhimSV.XoaPhim(value).subscribe((kq:any)=>{
-    console.log(kq);
+    swal({
+      title: 'Bạn có chắc?',
+      text: "bạn muốn xóa phim này!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        swal(
+          'Đã Xóa!',
+          'Bạn xóa thành công phim này.',
+          'success'
+        )
+      }
+    })
     this.LayDSP();
   }, error => {
     console.log(error);

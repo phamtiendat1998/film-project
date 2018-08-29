@@ -30,7 +30,6 @@
           <thead>
             <tr class="table100-head">
               <th>#</th>
-              <th (click)="sort('MaPhim')">Mã Phim <span class="fa fa-sort-amount-asc" *ngIf="key =='MaPhim'" [ngClass]="{'fa fa-sort-amount-asc':reverse,'fa fa-sort-amount-desc':!reverse}"></span></th>
               <th (click)="sort('TenPhim')">Tên Phim <span class="fa fa-sort-amount-asc" *ngIf="key =='TenPhim'" [ngClass]="{'fa fa-sort-amount-asc':reverse,'fa fa-sort-amount-desc':!reverse}"></span></th>
               <th>Hình Ảnh</th>
               <th>Trailer</th>
@@ -42,7 +41,6 @@
           <tbody>
             <tr *ngFor="let phim of mangPhim | orderBy: key : reverse | filter:filter | paginate:{itemsPerPage:4,currentPage:p}; let i = index">
               <td>{{i}}</td>
-              <td>{{phim.MaPhim}}</td>
               <td>{{phim.TenPhim}}</td>
               <td><img [src]="phim.HinhAnh" alt="" class="img-fluid" width="100px;"/></td>
               <td>{{phim.Trailer}}</td>
@@ -94,16 +92,16 @@
         <form #formThemPhim="ngForm" (ngSubmit)="themPhim(formThemPhim.value,hinhAnh.files)">
           <div class="form-group">
             <label for="">Tên Phim: </label>
-            <input type="text" class="form-control" required #TenPhim="ngModel" name="TenPhim" ngModel>
-            <div *ngIf="TenPhim.errors && (TenPhim.touched || TenPhim.dirty)">
-              <div class="alert alert-danger" *ngIf="TenPhim.errors.required">Vui lòng nhập tên phim ! </div>
+            <input type="text" class="form-control" required #tenPhim="ngModel" name="TenPhim" ngModel>
+            <div *ngIf="tenPhim.errors && (tenPhim.touched || tenPhim.dirty)">
+              <div class="alert alert-danger" *ngIf="tenPhim.errors.required">Vui lòng nhập tên phim ! </div>
             </div>
           </div>
           <div class="form-group">
             <label for="">Trailer: </label>
-            <input type="text" class="form-control" required #Trailer="ngModel" name="Trailer" ngModel>
-            <div *ngIf="Trailer.errors && (Trailer.touched || Trailer.dirty)">
-              <div class="alert alert-danger" *ngIf="Trailer.errors.required">Vui lòng gắn trailer ! </div>
+            <input type="text" class="form-control" required #trailer="ngModel" name="Trailer" ngModel>
+            <div *ngIf="trailer.errors && (trailer.touched || trailer.dirty)">
+              <div class="alert alert-danger" *ngIf="trailer.errors.required">Vui lòng gắn trailer ! </div>
             </div>
           </div>
           <div class="form-group">
@@ -112,23 +110,23 @@
           </div>
           <div class="form-group">
             <label for="">Mô Tả: </label>
-            <textarea type="text" class="form-control" required #MoTa="ngModel" name="MoTa" ngModel></textarea>
-            <div *ngIf="MoTa.errors && (MoTa.touched || MoTa.dirty)">
-              <div class="alert alert-danger" *ngIf="MoTa.errors.required">Vui lòng nhập mô tả ! </div>
+            <textarea type="text" class="form-control" required #moTa="ngModel" name="MoTa" ngModel></textarea>
+            <div *ngIf="moTa.errors && (moTa.touched || moTa.dirty)">
+              <div class="alert alert-danger" *ngIf="moTa.errors.required">Vui lòng nhập mô tả ! </div>
             </div>
           </div>
           <div class="form-group">
             <label for="">Ngày Khởi Chiếu: </label>
-            <input type="date" class="form-control" required #NgayKhoiChieu="ngModel" name="NgayKhoiChieu" ngModel>
-            <div *ngIf="NgayKhoiChieu.errors && (NgayKhoiChieu.touched || NgayKhoiChieu.dirty)">
-              <div class="alert alert-danger" *ngIf="NgayKhoiChieu.errors.required">Vui lòng nhập ngày khởi chiếu ! </div>
+            <input type="date" class="form-control" required #ngayKhoiChieu="ngModel" name="NgayKhoiChieu" ngModel>
+            <div *ngIf="ngayKhoiChieu.errors && (ngayKhoiChieu.touched || ngayKhoiChieu.dirty)">
+              <div class="alert alert-danger" *ngIf="ngayKhoiChieu.errors.required">Vui lòng nhập ngày khởi chiếu ! </div>
             </div>
           </div>
           <div class="form-group">
             <label for="">Đánh Giá: </label>
-            <input type="text" class="form-control" required #DanhGia="ngModel" name="DanhGia" ngModel>
-            <div *ngIf="DanhGia.errors && (DanhGia.touched || DanhGia.dirty)">
-              <div class="alert alert-danger" *ngIf="DanhGia.errors.required">Vui lòng nhập đánh giá ! </div>
+            <input type="text" class="form-control" required #danhGia="ngModel" name="DanhGia" ngModel>
+            <div *ngIf="danhGia.errors && (danhGia.touched || danhGia.dirty)">
+              <div class="alert alert-danger" *ngIf="danhGia.errors.required">Vui lòng nhập đánh giá ! </div>
             </div>
           </div>
           <div class="form-group">
@@ -161,16 +159,16 @@
               </div>
           <div class="form-group">
             <label for="">Tên Phim: </label>
-            <input type="text" class="form-control" required #TenPhim="ngModel" name="TenPhim" ngModel>
-            <div *ngIf="TenPhim.errors && (TenPhim.touched || TenPhim.dirty)">
-              <div class="alert alert-danger" *ngIf="TenPhim.errors.required">Vui lòng nhập tên phim ! </div>
+            <input type="text" class="form-control" required #tenPhim="ngModel" name="TenPhim" ngModel>
+            <div *ngIf="tenPhim.errors && (tenPhim.touched || tenPhim.dirty)">
+              <div class="alert alert-danger" *ngIf="tenPhim.errors.required">Vui lòng nhập tên phim ! </div>
             </div>
           </div>
           <div class="form-group">
             <label for="">Trailer: </label>
-            <input type="text" class="form-control" required #Trailer="ngModel" name="Trailer" ngModel>
-            <div *ngIf="Trailer.errors && (Trailer.touched || Trailer.dirty)">
-              <div class="alert alert-danger" *ngIf="Trailer.errors.required">Vui lòng gắn trailer ! </div>
+            <input type="text" class="form-control" required #trailer="ngModel" name="Trailer" ngModel>
+            <div *ngIf="trailer.errors && (trailer.touched || trailer.dirty)">
+              <div class="alert alert-danger" *ngIf="trailer.errors.required">Vui lòng gắn trailer ! </div>
             </div>
           </div>
           <div class="form-group">
@@ -179,23 +177,23 @@
           </div>
           <div class="form-group">
             <label for="">Mô Tả: </label>
-            <textarea type="text" class="form-control" required #MoTa="ngModel" name="MoTa" ngModel></textarea>
-            <div *ngIf="MoTa.errors && (MoTa.touched || MoTa.dirty)">
-              <div class="alert alert-danger" *ngIf="MoTa.errors.required">Vui lòng nhập mô tả ! </div>
+            <textarea type="text" class="form-control" required #moTa="ngModel" name="MoTa" ngModel></textarea>
+            <div *ngIf="moTa.errors && (moTa.touched || moTa.dirty)">
+              <div class="alert alert-danger" *ngIf="moTa.errors.required">Vui lòng nhập mô tả ! </div>
             </div>
           </div>
           <div class="form-group">
             <label for="">Ngày Khởi Chiếu: </label>
-            <input type="date" class="form-control" required #NgayKhoiChieu="ngModel" name="NgayKhoiChieu" ngModel>
-            <div *ngIf="NgayKhoiChieu.errors && (NgayKhoiChieu.touched || NgayKhoiChieu.dirty)">
-              <div class="alert alert-danger" *ngIf="NgayKhoiChieu.errors.required">Vui lòng nhập ngày khởi chiếu ! </div>
+            <input type="date" class="form-control" required #ngayKhoiChieu="ngModel" name="NgayKhoiChieu" ngModel>
+            <div *ngIf="ngayKhoiChieu.errors && (ngayKhoiChieu.touched || ngayKhoiChieu.dirty)">
+              <div class="alert alert-danger" *ngIf="ngayKhoiChieu.errors.required">Vui lòng nhập ngày khởi chiếu ! </div>
             </div>
           </div>
           <div class="form-group">
             <label for="">Đánh Giá: </label>
-            <input type="text" class="form-control" required #DanhGia="ngModel" name="DanhGia" ngModel>
-            <div *ngIf="DanhGia.errors && (DanhGia.touched || DanhGia.dirty)">
-              <div class="alert alert-danger" *ngIf="DanhGia.errors.required">Vui lòng nhập đánh giá ! </div>
+            <input type="text" class="form-control" required #danhGia="ngModel" name="DanhGia" ngModel>
+            <div *ngIf="danhGia.errors && (danhGia.touched || danhGia.dirty)">
+              <div class="alert alert-danger" *ngIf="danhGia.errors.required">Vui lòng nhập đánh giá ! </div>
             </div>
           </div>
           <div class="form-group">
