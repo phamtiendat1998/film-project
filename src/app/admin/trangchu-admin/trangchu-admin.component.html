@@ -45,17 +45,35 @@
   <div class="row">
     <div class="col-md-6">
       <div class="tile">
-        <h3 class="tile-title">Monthly Sales</h3>
+        <h3 class="tile-title">Doanh Thu Hằng Năm</h3>
         <div class="embed-responsive embed-responsive-16by9">
-          <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
+          <div style="display: block"  class="embed-responsive-item">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"
+                    ></canvas>
+                    <button (click)="randomize()">Update</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="tile">
-        <h3 class="tile-title">Support Requests</h3>
+        <h3 class="tile-title">Doanh Thu Theo Tháng</h3>
         <div class="embed-responsive embed-responsive-16by9">
-          <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
+          <div style="display: block" class="embed-responsive-item">
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    (chartHover)="chartHoveredPie($event)"
+                    (chartClick)="chartClickedPie($event)"></canvas>
+          </div>
         </div>
       </div>
     </div>

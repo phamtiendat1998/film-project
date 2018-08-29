@@ -87,7 +87,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span id="btnDongForm" aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -166,19 +166,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h3 class="modal-title" id="exampleModalLabel">Chỉnh Sửa Người Dùng</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span id="btnDongformCN" aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <form #formCapNhat="ngForm" (ngSubmit)="CapNhat(formCapNhat.value)">
             <div class="form-group">
               <label for="TaiKhoan">Tài Khoản:</label>
-              <input type="text" required #taikhoan="ngModel" class="form-control txtF" name="TaiKhoan" ngModel>
-              <div *ngIf="taikhoan.errors && (taikhoan.touched || taikhoan.dirty)">
-                <div class="alert alert-danger" *ngIf="taikhoan.errors.required">Vui lòng nhập tài khoản ! </div>
-              </div>
+              <input type="text" required #taikhoan="ngModel" class="form-control txtF" name="TaiKhoan" ngModel readonly>
             </div>
             <div class="form-group">
               <label for="MatKhau">Mật Khẩu:</label>
