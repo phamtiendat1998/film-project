@@ -10,7 +10,6 @@ declare var $: any;
 export class AdminLayoutComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit() {
     $(document).ready(function () {
      let treeviewMenu = $('.app-menu');

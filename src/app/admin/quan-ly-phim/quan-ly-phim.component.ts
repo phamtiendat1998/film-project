@@ -42,7 +42,7 @@ export class QuanLyPhimComponent implements OnInit {
           this.LayDSP();
           this.formTP.reset();
           $('#btnDongformTP').trigger('click');
-        },2000)
+        },500)
       },
       (error) => {
         console.log(error);

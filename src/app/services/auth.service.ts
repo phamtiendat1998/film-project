@@ -21,6 +21,14 @@ export class AuthService {
       this._isLoginUser = false;
     }
   }
+  public KiemTraDangNhapAdmin() {
+    let nguoiDungHienTai = JSON.parse(localStorage.getItem('AdminDangNhap'));
+    if (nguoiDungHienTai !== null) {
+      this._isLoginAdmin = true;
+    } else {
+      this._isLoginAdmin = false;
+    }
+  }
   public DangNhapAdmin() {
     this._isLoginAdmin = true;
   }
