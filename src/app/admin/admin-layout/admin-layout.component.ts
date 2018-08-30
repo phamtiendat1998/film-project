@@ -12,7 +12,7 @@ export class AdminLayoutComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     $(document).ready(function () {
-     let treeviewMenu = $('.app-menu');
+      let treeviewMenu = $('.app-menu');
 
       // Toggle Sidebar
       $('[data-toggle="sidebar"]').click(function (event) {
@@ -34,6 +34,9 @@ export class AdminLayoutComponent implements OnInit {
 
       //Activate bootstrip tooltips
       $("[data-toggle='tooltip']").tooltip();
+
+      // Lấy useradmin
+      let userAdmin = JSON.parse(localStorage.getItem('AdminDangNhap'));
     });
   }
 
