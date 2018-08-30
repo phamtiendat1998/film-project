@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -8,8 +9,12 @@ declare var $: any;
   styleUrls: ['./admin-layout.component.css']
 })
 export class AdminLayoutComponent implements OnInit {
-
-  constructor() { }
+ public Aduser:string;
+DangXuat() {
+  localStorage.removeItem("AdminDangNhap");
+  this.router.navigate(['/admin']);
+}
+  constructor(private router: Router) { }
   ngOnInit() {
     $(document).ready(function () {
       let treeviewMenu = $('.app-menu');
@@ -36,8 +41,10 @@ export class AdminLayoutComponent implements OnInit {
       $("[data-toggle='tooltip']").tooltip();
 
       // Lấy useradmin
-      let userAdmin = JSON.parse(localStorage.getItem('AdminDangNhap'));
     });
+    let userAdmin = JSON.parse(localStorage.getItem('AdminDangNhap'));
+    this.Aduser = userAdmin.HoTen;
+    console.log(userAdmin);
   }
 
 }
