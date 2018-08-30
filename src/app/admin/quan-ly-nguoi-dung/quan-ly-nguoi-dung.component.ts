@@ -31,16 +31,21 @@ export class QuanLyNguoiDungComponent implements OnInit {
           value.MaNhom = "GP03";
           this.nguoiDungSV.dangKyNguoiDung(value).subscribe(
             (kq: any) => {
-              //console.log(kq)
-          this.mangNguoiDung.unshift(value);
-          this.formDK.reset();
-          swal({
-            type: 'success',
-            title: 'Thêm thành công',
-            showConfirmButton: false,
-            timer: 2000
-          })
-          $('#btnDongForm').trigger('click');
+              if(typeof(kq) == "object"){
+   //console.log(kq)
+   this.mangNguoiDung.unshift(value);
+   this.formDK.reset();
+   swal({
+     type: 'success',
+     title: 'Thêm thành công',
+     showConfirmButton: false,
+     timer: 2000
+   })
+   $('#btnDongForm').trigger('click');
+              }else{
+                swal('Tài khoản hoặc mật khẩu đã tồn tại !')
+                this.formDK.reset();
+              }
         },
          error => {
         console.log(error);
