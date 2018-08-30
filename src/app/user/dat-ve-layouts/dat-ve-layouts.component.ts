@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PhimService } from '../../services/phim.service';
 import { Phim } from '../../Model/Phim';
 import { ListGheComponent } from '../list-ghe/list-ghe.component';
 import { AuthService } from '../../services/auth.service';
+import $ from 'jquery'
+declare var $: any;
 
 @Component({
   selector: 'app-dat-ve-layouts',
@@ -15,12 +17,14 @@ export class DatVeLayoutsComponent implements OnInit {
   public statusKTDN: boolean = false;
   public statusError: boolean = false;
   public statusChonNgay: boolean = false;
+  public statusThanhToan: boolean = false;
+  public tongTien: number = 0;
   public maPhim: string;
   public phim: Phim;
   public listGhe: any;
   public listVe = [];
   public maLichChieu: string;
-  constructor(private Activate: ActivatedRoute, private phimSV: PhimService, private authSV: AuthService) { }
+  constructor(private Activate: ActivatedRoute, private phimSV: PhimService, private authSV: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.Activate.params.subscribe(
@@ -40,14 +44,18 @@ export class DatVeLayoutsComponent implements OnInit {
     } else {
       this.statusKTDN = false;
     }
-    console.log(this.authSV._isLoginUser);
   }
   chonNgayParent(thamso) {
+    $('.img-phim').css({ 'transform': 'translateY(0)' });
     this.maLichChieu = thamso.MaLichChieu;
     this.statusChonNgay = thamso.Status;
     this.phimSV.layChiTietPhongVe(thamso.MaLichChieu).subscribe(
       (kq: any) => {
         this.listGhe = kq.DanhSachGhe;
+        this.tongTien = 0;
+        setTimeout(() => {
+          this.statusChonNgay = false;
+        }, 180000);
       },
       (error) => {
         console.log(error);
@@ -55,13 +63,41 @@ export class DatVeLayoutsComponent implements OnInit {
     )
   }
   datVeParent(thamso) {
-    this.listVe = thamso;
+    if (thamso.length !== 0) {
+      this.listVe = thamso;
+      this.tongTien = 0;
+      for (let i = 0; i < this.listVe.length; i++) {
+        this.tongTien += this.listVe[i].GiaVe;
+      }
+      $('.img-phim').css({ 'transform': 'translateY(-500px)' });
+      setTimeout(() => {
+        this.statusThanhToan = true;
+      }, 500);
+    } else {
+      this.tongTien = 0;
+      $('.img-phim').css({ 'transform': 'translateY(0)' });
+    }
   }
   xacNhanVe() {
     this.listghe.ktGhe();
-    // let taikhoanUser = localStorage.getItem('userLogin');
-    // console.log(taikhoanUser);
-    // console.log(this.listVe);
-    // console.log(this.maLichChieu);
+    if (this.listVe.length !== 0) {
+      let taikhoanUser = JSON.parse(localStorage.getItem('userLogin'));
+      let ve = {
+        MaLichChieu: this.maLichChieu,
+        TaiKhoanNguoiDung: taikhoanUser,
+        DanhSachVe: this.listVe
+      }
+      this.phimSV.DatVe(ve).subscribe(
+        (kq: any) => {
+          // console.log(kq);
+          if (kq == "Đặt vé thành công!") {
+            this.router.navigate(['/datvethanhcong']);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
   }
 }

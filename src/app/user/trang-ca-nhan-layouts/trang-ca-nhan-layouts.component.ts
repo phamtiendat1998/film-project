@@ -94,6 +94,7 @@ export class TrangCaNhanLayoutsComponent implements OnInit {
   layLichSu() {
     this.userSV.layLichSuDatVe(this.infoUser).subscribe(
       (kq: any) => {
+        // console.log(kq);
         if (kq.DanhSachVeDaDat.length !== 0) {
           this.statusLichSu = true;
         } else {

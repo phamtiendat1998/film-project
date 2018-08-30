@@ -35,7 +35,7 @@ export class PhimService {
     let formData = new FormData();
     formData.append('Files', fileHinh);
     formData.append('TenPhim', tenPhim);
-    let obServe:Observable<any> = this._http.post(urlThemPhim, formData).map((result: Response) => result.json());
+    let obServe: Observable<any> = this._http.post(urlThemPhim, formData).map((result: Response) => result.json());
     return obServe;
   }
   XoaPhim(phim: Phim) {
@@ -43,11 +43,18 @@ export class PhimService {
     let obServe: Observable<any> = this._http.delete(urlXoa).map((result: Response) => result.json());
     return obServe;
   }
-  capNhatPhim(phim:any) {
+  capNhatPhim(phim: any) {
     let urlCapNhat = `http://sv2.myclass.vn/api/QuanLyPhim/CapNhatPhim`;
     let headerCapNhat = new Headers();
     headerCapNhat.append("Content-Type", "application/json;charset=UTF-8");
     let obServe: Observable<any> = this._http.post(urlCapNhat, phim, { headers: headerCapNhat }).map((result: Response) => result.json());
+    return obServe;
+  }
+  DatVe(ve: any) {
+    let urlDatVe = `http://sv2.myclass.vn/api/QuanLyDatVe/DatVe`;
+    let header = new Headers();
+    header.append('Content-Type', 'application/json;charset=UTF-8');
+    let obServe = this._http.post(urlDatVe, ve, { headers: header }).map((result: Response) => result.json());
     return obServe;
   }
   constructor(private _http: Http) { }
