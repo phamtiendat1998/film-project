@@ -50,10 +50,14 @@ export class DangNhapComponent implements OnInit {
               // True
               that.Succes();
               localStorage.setItem('userLogin', JSON.stringify(kq));
-              that.trangthaiDN.emit(that.validDN);
               that.auth.DangNhap();
               // Lưu user trên service
               that.tranUser.TransformUser(kq);
+              let statusDN = {
+                status: true,
+                ram: Math.random() * 10
+              };
+              that.trangthaiDN.emit(statusDN);
             }
           },
           (error) => {

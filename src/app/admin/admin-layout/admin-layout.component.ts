@@ -37,6 +37,8 @@ export class AdminLayoutComponent implements OnInit {
 
       // Lấy useradmin
       let userAdmin = JSON.parse(localStorage.getItem('AdminDangNhap'));
+      console.log(userAdmin);
+
     });
   }
 

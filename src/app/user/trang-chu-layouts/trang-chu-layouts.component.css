@@ -1,0 +1,11 @@
+.carousel {
+  background-color: #0c0c0c;
+}
+
+.content {
+  padding-left: 110px;
+  width: 100%;
+  right: 0;
+  background-color: #0c0c0c;
+  z-index: 99;
+}

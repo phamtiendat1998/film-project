@@ -1,15 +1,3 @@
-.wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.side-bar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 500;
-}
-
 .content {
   background-image: radial-gradient(circle, #66560f, #0c0c0c, black);
   padding-left: 110px;

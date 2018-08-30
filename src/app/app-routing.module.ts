@@ -11,11 +11,16 @@ import { ChiTietPhimLayoutsComponent } from "./user/chi-tiet-phim-layouts/chi-ti
 import { DatVeLayoutsComponent } from "./user/dat-ve-layouts/dat-ve-layouts.component";
 import { TrangCaNhanLayoutsComponent } from "./user/trang-ca-nhan-layouts/trang-ca-nhan-layouts.component";
 import { AnouThongBaoComponent } from "./user/anou-thong-bao/anou-thong-bao.component";
+import { TrangChuLayoutsComponent } from "./user/trang-chu-layouts/trang-chu-layouts.component";
 const appRoute: Routes = [
-  { path: "", component: UserLayoutsComponent },
-  { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
+  {
+    path: '', component: UserLayoutsComponent, children: [
+      { path: '', component: TrangChuLayoutsComponent },
+      { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
+      { path: 'trangcanhan', component: TrangCaNhanLayoutsComponent },
+    ]
+  },
   { path: 'datve/:maphim', component: DatVeLayoutsComponent },
-  { path: 'trangcanhan', component: TrangCaNhanLayoutsComponent },
   { path: 'datvethanhcong', component: AnouThongBaoComponent },
   {
     path: "admin", component: LoginAdminComponent

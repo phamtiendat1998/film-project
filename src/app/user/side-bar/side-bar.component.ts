@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import $ from 'jquery';
 import { Router } from '@angular/router';
 declare var $: any;
@@ -8,8 +8,9 @@ declare var $: any;
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  @Input() statusLogin: boolean = true;
+  @Input() statusLogin: any;
   @Input() statusSCR: string;
+  public daLogin: boolean;
   public clickSM: boolean = false;
   public statusUser: boolean = false;
   constructor(private router: Router) { }
@@ -26,6 +27,14 @@ export class SideBarComponent implements OnInit {
       }
     });
     this.GetUser();
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.statusLogin !== undefined) {
+      this.daLogin = true
+      setTimeout(() => {
+        this.daLogin = false;
+      }, 1000);
+    }
   }
   ThuNho() {
     if (this.clickSM === false) {
@@ -45,15 +54,15 @@ export class SideBarComponent implements OnInit {
   }
   DangXuat() {
     localStorage.removeItem("userLogin");
-    this.statusLogin = true;
+    this.daLogin = true;
     this.router.navigate(['/']);
   }
   GetUser() {
     let userLogin = localStorage.getItem("userLogin");
     if (userLogin !== null) {
-      this.statusLogin = false;
+      this.daLogin = false;
     } else {
-      this.statusLogin = true;
+      this.daLogin = true;
     }
   }
   getScrollLink(any) {

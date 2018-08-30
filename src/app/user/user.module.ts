@@ -35,12 +35,13 @@ import { DanhGiaComponent } from './danh-gia/danh-gia.component';
 import { ItemPhimSearchComponent } from './item-phim-search/item-phim-search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TrangCaNhanLayoutsComponent } from './trang-ca-nhan-layouts/trang-ca-nhan-layouts.component';
+import { TrangChuLayoutsComponent } from './trang-chu-layouts/trang-chu-layouts.component';
 
 @NgModule({
   imports: [
     CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule, FormsModule, Ng2SearchPipeModule
   ],
-  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, ChonPhimComponent, ChonGheComponent, ThanhToanComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent],
+  declarations: [SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, ChonPhimComponent, ChonGheComponent, ThanhToanComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent, TrangChuLayoutsComponent],
   exports: [
     SideBarComponent, UserLayoutsComponent, NavBarComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, ItemDienVienComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, ChonPhimComponent, ChonGheComponent, ThanhToanComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent
   ]
