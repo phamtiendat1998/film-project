@@ -1,6 +1,8 @@
-.datve-layout {
+.datve-layout,
+.thongbaoDangNhap {
   background-color: #0c0c0c;
   height: 100vh;
+  width: 100%;
 }
 
 .thanh-dieu-huongm,
@@ -13,7 +15,6 @@
 }
 
 /* IMG */
-
 .info-phim {
   width: 100%;
   height: 550px;
@@ -38,14 +39,12 @@
 }
 
 /* GHẾ */
-
 .tbChonNgay {
   font-size: 30px;
   color: white;
 }
 
 /* BTN Thanh toán */
-
 .btn-thanhtoan {
   height: 10%;
   font-size: 40px;
@@ -63,4 +62,56 @@
 
 .btn-thanhtoan p i:hover {
   transform: scale(1.2, 1.2);
+}
+
+/* TB Đăng nhập */
+.thongbaoDangNhap .title {
+  color: #FFCE00;
+  font-size: 30px;
+}
+
+/* BTN BACK */
+.btnBack {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  color: #FFCE00;
+  border: 1px solid #FFCE00;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnBack::before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+
+.btnBack:hover {
+  background-color: #FFCE00;
+  color: black;
+  border-bottom: 4px solid darken(#FFCE00, 10%);
+}
+
+.btnBack:hover::before {
+  transform: skewX(-45deg) translateX(15.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+.btnBack:focus {
+  outline: none;
+}
+
+.btnBack p {
+  font-size: 20px;
+  margin: 0;
+  padding: 5px 10px;
 }

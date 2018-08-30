@@ -32,7 +32,7 @@
   <!-- Content Bar -->
   <ul class="list-unstyled">
     <li class="d-flex align-items-center justify-content-center">
-      <a href="#home" class="active" [ngClass]="{'fontIcon': clickSM}">
+      <a #home href="#home" [ngClass]="{'fontIcon': clickSM,'active':statusSCR=='home'}" (click)="getScrollLink(home)">
         <span *ngIf="!clickSM; else sidebarIcon1" class="animated fadeIn">HOME</span>
         <ng-template #sidebarIcon1>
           <i class="fa fa-home animated fadeIn"></i>
@@ -40,7 +40,7 @@
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
-      <a href="#phim" class="" [ngClass]="{'fontIcon': clickSM}">
+      <a #phim href="#phim" [ngClass]="{'fontIcon': clickSM,'active':statusSCR=='phim'}" (click)="getScrollLink(phim)">
         <span *ngIf="!clickSM; else sidebarIcon2" class="animated fadeIn">PHIM</span>
         <ng-template #sidebarIcon2>
           <i class="fa fa-ticket animated fadeIn"></i>
@@ -48,7 +48,7 @@
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
-      <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
+      <a #tintuc href="#tintuc" [ngClass]="{'fontIcon': clickSM}" (click)="getScrollLink(tintuc)">
         <span *ngIf="!clickSM; else sidebarIcon4" class="animated fadeIn">TIN TỨC</span>
         <ng-template #sidebarIcon4>
           <i class="fa fa-info animated fadeIn"></i>
@@ -56,7 +56,7 @@
       </a>
     </li>
     <li class="d-flex align-items-center justify-content-center">
-      <a href="#" class="" [ngClass]="{'fontIcon': clickSM}">
+      <a #lienhe href="#lienhe" [ngClass]="{'fontIcon': clickSM}" (click)="getScrollLink(lienhe)">
         <span *ngIf="!clickSM; else sidebarIcon5" class="animated fadeIn">LIÊN HỆ</span>
         <ng-template #sidebarIcon5>
           <i class="fa fa-address-book-o animated fadeIn"></i>

@@ -8,8 +8,9 @@ declare var $: any;
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  public clickSM: boolean = false;
   @Input() statusLogin: boolean = true;
+  @Input() statusSCR: string;
+  public clickSM: boolean = false;
   public statusUser: boolean = false;
   constructor(private router: Router) { }
 
@@ -54,5 +55,10 @@ export class SideBarComponent implements OnInit {
     } else {
       this.statusLogin = true;
     }
+  }
+  getScrollLink(any) {
+    $('html').animate({
+      scrollTop: $(any.hash).offset().top
+    }, 1000)
   }
 }

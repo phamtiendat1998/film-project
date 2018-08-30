@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PhimService } from '../../services/phim.service';
 import { Phim } from '../../Model/Phim';
 import { ListGheComponent } from '../list-ghe/list-ghe.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-dat-ve-layouts',
@@ -11,6 +12,7 @@ import { ListGheComponent } from '../list-ghe/list-ghe.component';
 })
 export class DatVeLayoutsComponent implements OnInit {
   @ViewChild(ListGheComponent) listghe: ListGheComponent;
+  public statusKTDN: boolean = false;
   public statusError: boolean = false;
   public statusChonNgay: boolean = false;
   public maPhim: string;
@@ -18,7 +20,7 @@ export class DatVeLayoutsComponent implements OnInit {
   public listGhe: any;
   public listVe = [];
   public maLichChieu: string;
-  constructor(private Activate: ActivatedRoute, private phimSV: PhimService) { }
+  constructor(private Activate: ActivatedRoute, private phimSV: PhimService, private authSV: AuthService) { }
 
   ngOnInit() {
     this.Activate.params.subscribe(
@@ -31,7 +33,14 @@ export class DatVeLayoutsComponent implements OnInit {
           }
         )
       }
-    )
+    );
+    this.authSV.KiemTraDangNhap();
+    if (this.authSV._isLoginUser == false) {
+      this.statusKTDN = true;
+    } else {
+      this.statusKTDN = false;
+    }
+    console.log(this.authSV._isLoginUser);
   }
   chonNgayParent(thamso) {
     this.maLichChieu = thamso.MaLichChieu;

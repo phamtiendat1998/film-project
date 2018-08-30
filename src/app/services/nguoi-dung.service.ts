@@ -25,21 +25,21 @@ export class NguoiDungService {
     let obServe: Observable<any> = this._http.post(urlDangNhap, user).map((result: Response) => result.json());
     return obServe;
   }
-  KiemTraDangNhap():boolean{
-    let nguoiDung =localStorage.getItem("localNguoiDung");
-    if(nguoiDung != null){
+  KiemTraDangNhap(): boolean {
+    let nguoiDung = localStorage.getItem("localNguoiDung");
+    if (nguoiDung != null) {
       return true;
     }
     return false;
   }
-  LayThongTinDangNhap():NguoiDung{
+  LayThongTinDangNhap(): NguoiDung {
     if (this.KiemTraDangNhap()) {
-      let nguoiDung:NguoiDung = JSON.parse(localStorage.getItem('localNguoiDung'));
+      let nguoiDung: NguoiDung = JSON.parse(localStorage.getItem('localNguoiDung'));
       return nguoiDung;
     }
     return null;
   }
-  DangXuat():void{
+  DangXuat(): void {
     localStorage.removeItem('localNguoiDung');
   }
   XoaNguoiDung(user: NguoiDung) {
@@ -52,6 +52,13 @@ export class NguoiDungService {
     let headerCapNhat = new Headers();
     headerCapNhat.append("Content-Type", "application/json;charset=UTF-8");
     let obServe: Observable<any> = this._http.post(urlCapNhat, user, { headers: headerCapNhat }).map((result: Response) => result.json());
+    return obServe;
+  }
+  layLichSuDatVe(user: NguoiDung) {
+    let urlLichSu = `http://sv2.myclass.vn/api/QuanLyDatVe/XemLichSuDatVe?TaiKhoan=${user.TaiKhoan}`;
+    let headerLichsu = new Headers();
+    headerLichsu.append("Content-Type", "application/json;charset=UTF-8");
+    let obServe: Observable<any> = this._http.post(urlLichSu, user, { headers: headerLichsu }).map((result: Response) => result.json());
     return obServe;
   }
   constructor(private _http: Http) { }

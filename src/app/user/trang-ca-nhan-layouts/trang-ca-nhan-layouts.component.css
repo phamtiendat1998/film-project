@@ -153,3 +153,9 @@ input.ng-invalid.ng-touched {
   color: #908199;
   margin-right: 30px;
 }
+
+/* Lich sử */
+.statusLS {
+  font-size: 30px;
+  color: #FFCE00;
+}

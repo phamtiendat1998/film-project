@@ -12,7 +12,7 @@ import { NguoiDungService } from '../../services/nguoi-dung.service';
 export class TrangCaNhanLayoutsComponent implements OnInit {
   @ViewChild("formThongTin") formIF: NgForm;
   @ViewChild("formMatKhau") formMK: NgForm;
-
+  public statusLichSu: boolean = false;
   public statusInfo: boolean = false;
   public statusUpDate: string;
   public infoUser: NguoiDung;
@@ -90,5 +90,19 @@ export class TrangCaNhanLayoutsComponent implements OnInit {
       this.statusUpDate = "failMkCu";
       this.timeOutStatus();
     }
+  }
+  layLichSu() {
+    this.userSV.layLichSuDatVe(this.infoUser).subscribe(
+      (kq: any) => {
+        if (kq.DanhSachVeDaDat.length !== 0) {
+          this.statusLichSu = true;
+        } else {
+          this.statusLichSu = false;
+        }
+      },
+      (error) => {
+        this.statusLichSu = false;
+      }
+    )
   }
 }

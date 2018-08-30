@@ -23,7 +23,7 @@
             <a class="list-group-item list-group-item-action" id="list-matkhau-list" data-toggle="list" href="#list-matkhau"
               role="tab" aria-controls="matkhau">Mật Khẩu</a>
             <a class="list-group-item list-group-item-action" id="list-lichsu-list" data-toggle="list" href="#list-lichsu"
-              role="tab" aria-controls="lichsu">Lịch Sử Đặt Vé</a>
+              role="tab" aria-controls="lichsu" (click)="layLichSu()">Lịch Sử Đặt Vé</a>
           </div>
         </div>
         <div class="col-8">
@@ -102,7 +102,10 @@
                   <i class="tbfalse-icon fa fa-check pr-3"></i>MẬT KHẨU MỚI KHÔNG TRÙNG NHAU</p>
               </div>
             </div>
-            <div class="tab-pane animated fadeIn" id="list-lichsu" role="tabpanel" aria-labelledby="list-lichsu-list">...</div>
+            <!-- Lịch sử đặt vé -->
+            <div class="tab-pane animated fadeIn" id="list-lichsu" role="tabpanel" aria-labelledby="list-lichsu-list">
+              <p *ngIf="!statusLichSu" class="statusLS">Bạn chưa đặt vé lần nào !!!</p>
+            </div>
           </div>
         </div>
       </div>
