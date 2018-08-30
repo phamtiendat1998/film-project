@@ -27,21 +27,22 @@ export class QuanLyNguoiDungComponent implements OnInit {
     //   "DanhSachNguoiDung",
     //   JSON.stringify(this.mangNguoiDung)
     // );
-    value.MaNhom = "GP03";
-    this.nguoiDungSV.dangKyNguoiDung(value).subscribe(
-      (kq: any) => {
-        //console.log(kq)
-        this.mangNguoiDung.unshift(value);
-        this.formDK.reset();
-        swal({
-          type: 'success',
-          title: 'Thêm thành công',
-          showConfirmButton: false,
-          timer: 2000
-        })
-        $('#btnDongForm').trigger('click');
-      },
-      error => {
+
+          value.MaNhom = "GP03";
+          this.nguoiDungSV.dangKyNguoiDung(value).subscribe(
+            (kq: any) => {
+              //console.log(kq)
+          this.mangNguoiDung.unshift(value);
+          this.formDK.reset();
+          swal({
+            type: 'success',
+            title: 'Thêm thành công',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          $('#btnDongForm').trigger('click');
+        },
+         error => {
         console.log(error);
       }
     );
