@@ -14,5 +14,9 @@ export class TinTucService {
     let obServe = this._httpClient.get(this.url);
     return obServe;
   }
+  CapNhatTin(tin){
+    let obServe = this._httpClient.post(this.url, tin);
+    return obServe;
+  }
   constructor(private _httpClient: HttpClient) { }
 }

@@ -111,7 +111,6 @@ export class QuanLyNguoiDungComponent implements OnInit {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.value) {
-          
           swal(
             'Đã Xóa!',
             'Bạn xóa thành công người dùng này.',

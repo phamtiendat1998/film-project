@@ -12,12 +12,13 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { Ng2OrderModule } from "ng2-order-pipe";
 import { ChartsModule } from 'ng2-charts';
+import { QuanLyTinTucComponent } from './quan-ly-tin-tuc/quan-ly-tin-tuc.component';
 @NgModule({
   imports: [
     CommonModule,RouterModule,FormsModule,NgxPaginationModule,Ng2SearchPipeModule,Ng2OrderModule,ChartsModule
 
   ],
-  declarations: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent],
-  exports: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent]
+  declarations: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent, QuanLyTinTucComponent],
+  exports: [LoginAdminComponent, HeaderAdminComponent, AdminLayoutComponent, TrangchuAdminComponent, QuanLyNguoiDungComponent, QuanLyPhimComponent,QuanLyTinTucComponent]
 })
 export class AdminModule { }

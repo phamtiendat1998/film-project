@@ -1,3 +1,4 @@
+import { QuanLyTinTucComponent } from './admin/quan-ly-tin-tuc/quan-ly-tin-tuc.component';
 
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
@@ -12,6 +13,7 @@ import { DatVeLayoutsComponent } from "./user/dat-ve-layouts/dat-ve-layouts.comp
 import { TrangCaNhanLayoutsComponent } from "./user/trang-ca-nhan-layouts/trang-ca-nhan-layouts.component";
 import { AnouThongBaoComponent } from "./user/anou-thong-bao/anou-thong-bao.component";
 import { TrangChuLayoutsComponent } from "./user/trang-chu-layouts/trang-chu-layouts.component";
+
 const appRoute: Routes = [
   {
     path: '', component: UserLayoutsComponent, children: [
@@ -30,6 +32,7 @@ const appRoute: Routes = [
       { path: 'charts', component: TrangchuAdminComponent },
       { path: 'quanlyphim', component: QuanLyPhimComponent },
       { path: 'quanlynguoidung', component: QuanLyNguoiDungComponent },
+      { path: 'quanlytintuc', component:QuanLyTinTucComponent},
       { path: 'admin', component: LoginAdminComponent }
     ]
   },
