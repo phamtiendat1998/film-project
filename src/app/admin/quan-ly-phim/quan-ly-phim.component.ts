@@ -27,22 +27,28 @@ export class QuanLyPhimComponent implements OnInit {
     console.log( HinhAnh[0]);
     this.PhimSV.ThemPhim(value).subscribe(
       (kq) => {
-        this.PhimSV.ThemHinhAnh( HinhAnh[0], value.TenPhim).subscribe(
-          (kqThemHinhAnh) => {
-            console.log(kqThemHinhAnh);
-          }
-        )
-        setTimeout(()=>{
-          swal({
-            type: 'success',
-            title: 'Thêm thành công',
-            showConfirmButton: false,
-            timer: 2000
-          })
-          this.LayDSP();
+        if(typeof(kq)=="object"){
+          this.PhimSV.ThemHinhAnh( HinhAnh[0], value.TenPhim).subscribe(
+            (kqThemHinhAnh) => {
+              console.log(kqThemHinhAnh);
+            }
+          )
+          setTimeout(()=>{
+            swal({
+              type: 'success',
+              title: 'Thêm thành công',
+              showConfirmButton: false,
+              timer: 2000
+            })
+            this.LayDSP();
+            this.formTP.reset();
+            $('#btnDongformTP').trigger('click');
+          },500)
+        }else{
+          swal('Phim đã tồn tại !')
           this.formTP.reset();
-          $('#btnDongformTP').trigger('click');
-        },500)
+        }
+       
       },
       (error) => {
         console.log(error);
