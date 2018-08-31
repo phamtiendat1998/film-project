@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Phim } from '../../Model/Phim';
 import { TransformTrailerService } from '../../services/transform-trailer.service';
-
+import $ from 'jquery';
+declare var $: any;
 @Component({
   selector: 'app-item-phim',
   templateUrl: './item-phim.component.html',
@@ -25,6 +26,7 @@ export class ItemPhimComponent implements OnInit {
       this.statusDatVe = false;
     }
   }
+
   UrlTrailer(url: string, ten: string) {
     if (url.search('watch') !== -1) {
       let mangTrailer = url.split('watch?v=');

@@ -1,11 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { PhimService } from '../../services/phim.service';
 import { Phim } from '../../Model/Phim';
-
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animation,
+  keyframes,
+  group,
+  animate,
+  query,
+  stagger
+} from '@angular/animations'
 @Component({
   selector: 'app-phim-dang-chieu',
   templateUrl: './phim-dang-chieu.component.html',
-  styleUrls: ['./phim-dang-chieu.component.css']
+  styleUrls: ['./phim-dang-chieu.component.css'],
+  // animations: [
+  //   trigger('cardPhimAnimation', [
+  //     transition('* => *', [
+  //       query(':leave', [
+  //         stagger(100, [
+  //           animate('0.5s', style({ opacity: 0 }))
+  //         ])
+  //       ]),
+  //       query(':enter', [
+  //         style({ opacity: 0 }),
+  //         stagger(100, [
+  //           animate('0.5s', style({ opacity: 1 }))
+  //         ])
+  //       ])
+  //     ])
+  //   ])
+  // ]
 })
 export class PhimDangChieuComponent implements OnInit {
   public dsphim: Phim[] = [];
@@ -60,4 +88,5 @@ export class PhimDangChieuComponent implements OnInit {
       }
     }
   }
+
 }

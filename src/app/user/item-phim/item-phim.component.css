@@ -67,7 +67,7 @@
 }
 
 .card-phim:hover img {
-  filter: blur(1.5px);
+  filter: blur(1px);
 }
 
 /* ------ */
