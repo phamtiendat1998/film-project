@@ -84,12 +84,11 @@ export class DatVeLayoutsComponent implements OnInit {
       let taikhoanUser = JSON.parse(localStorage.getItem('userLogin'));
       let ve = {
         MaLichChieu: this.maLichChieu,
-        TaiKhoanNguoiDung: taikhoanUser,
+        TaiKhoanNguoiDung: taikhoanUser.TaiKhoan,
         DanhSachVe: this.listVe
       }
       this.phimSV.DatVe(ve).subscribe(
         (kq: any) => {
-          // console.log(kq);
           if (kq == "Đặt vé thành công!") {
             this.router.navigate(['/datvethanhcong']);
           }

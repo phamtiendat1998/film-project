@@ -11,6 +11,7 @@ export class TrangChuLayoutsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     let that = this;
     let offsetHome = $('#home').offset().top;
     let offsetPhim = $('#phim').offset().top;

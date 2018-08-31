@@ -1,6 +1,6 @@
 <div class="thongbaoDangNhap d-flex justify-content-center align-items-center" *ngIf="statusKTDN; else datve">
   <div class="text-center">
-    <p class="title">Xin mời đăng nhập trước khi đặt vé !^^!</p>
+    <p class="title animated tada">Xin mời đăng nhập trước khi đặt vé !^^!</p>
     <div class="btnBack" [routerLink]="['/']">
       <p>Trở về TRANG CHỦ</p>
     </div>
@@ -52,10 +52,11 @@
                 {{phim.TenPhim}}
               </div>
             </div>
-            <div class="btn-thanhtoan text-center animated bounceIn" *ngIf="statusChonNgay">
+            <div class="btn-thanhtoan text-center animated bounceIn pt-3" *ngIf="statusChonNgay">
               <div class="btnBack" (click)="xacNhanVe()">
                 <p>
                   <i class="fa fa-shopping-bag"></i>
+                  <br>
                   THANH TOÁN
                 </p>
               </div>

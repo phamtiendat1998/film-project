@@ -8,10 +8,13 @@ import { PopupTrailerComponent } from '../popup-trailer/popup-trailer.component'
 export class UserLayoutsComponent implements OnInit {
   @ViewChild(PopupTrailerComponent) popupTrailer: PopupTrailerComponent;
   public statusDangNhap: any;
+  public statusPreLoad: boolean = false;
   constructor() { }
 
   ngOnInit() {
-
+    setTimeout(() => {
+      this.statusPreLoad = true;
+    }, 1500);
   }
   closeTrailer() {
     this.popupTrailer.close();

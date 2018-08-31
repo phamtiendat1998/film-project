@@ -13,6 +13,7 @@ import { DatVeLayoutsComponent } from "./user/dat-ve-layouts/dat-ve-layouts.comp
 import { TrangCaNhanLayoutsComponent } from "./user/trang-ca-nhan-layouts/trang-ca-nhan-layouts.component";
 import { AnouThongBaoComponent } from "./user/anou-thong-bao/anou-thong-bao.component";
 import { TrangChuLayoutsComponent } from "./user/trang-chu-layouts/trang-chu-layouts.component";
+import { TinTucLayoutsComponent } from './user/tin-tuc-layouts/tin-tuc-layouts.component';
 
 const appRoute: Routes = [
   {
@@ -20,6 +21,7 @@ const appRoute: Routes = [
       { path: '', component: TrangChuLayoutsComponent },
       { path: 'chitiet/:maphim', component: ChiTietPhimLayoutsComponent },
       { path: 'trangcanhan', component: TrangCaNhanLayoutsComponent },
+      { path: 'chitietTinTuc/:matin', component: TinTucLayoutsComponent },
     ]
   },
   { path: 'datve/:maphim', component: DatVeLayoutsComponent },
@@ -32,7 +34,7 @@ const appRoute: Routes = [
       { path: 'charts', component: TrangchuAdminComponent },
       { path: 'quanlyphim', component: QuanLyPhimComponent },
       { path: 'quanlynguoidung', component: QuanLyNguoiDungComponent },
-      { path: 'quanlytintuc', component:QuanLyTinTucComponent},
+      { path: 'quanlytintuc', component: QuanLyTinTucComponent },
       { path: 'admin', component: LoginAdminComponent }
     ]
   },

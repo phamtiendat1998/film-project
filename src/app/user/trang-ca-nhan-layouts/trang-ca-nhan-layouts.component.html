@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="container">
+  <div class="container tcn">
     <div class="row">
       <div class="col-12">
         <div class="box-user">
@@ -99,10 +99,22 @@
           </div>
           <!-- Lịch sử đặt vé -->
           <div class="tab-pane animated fadeIn" id="list-lichsu" role="tabpanel" aria-labelledby="list-lichsu-list">
-            <p *ngIf="!statusLichSu" class="statusLS">Bạn chưa đặt vé lần nào !!!</p>
+            <p *ngIf="!statusLichSu; else lichsuDatVe" class="statusLS">Bạn chưa đặt vé lần nào !!!</p>
+            <ng-template #lichsuDatVe>
+              <div class="item-lichsu mb-3" *ngFor="let ve of veDaDat">
+                <p>Tên phim: <span>{{ve.TenPhim}}</span></p>
+                <p>Rạp :<span>{{ve.Rap}}</span></p>
+                <p>Mã ghế :<span>{{ve.MaGhe}}</span></p>
+                <p>Ngày đặt : <span>{{ve.NgayDat}}</span></p>
+                <p>Giá vé : <span>{{ve.GiaVe}}</span></p>
+              </div>
+            </ng-template>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div>
+    <app-contact></app-contact>
   </div>
 </div>

@@ -25,6 +25,7 @@ export class ChiTietPhimLayoutsComponent implements OnInit {
   public listFilm = [];
   constructor(private Activate: ActivatedRoute, private phimSV: PhimService, private transURL: TransformTrailerService) { }
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.Activate.params.subscribe(
       (kq: any) => {
         this.maPhim = kq['maphim'];

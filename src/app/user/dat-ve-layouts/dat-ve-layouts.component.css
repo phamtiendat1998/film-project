@@ -105,6 +105,8 @@
   border: 1px solid #FFCE00;
   border-radius: 5px;
   cursor: pointer;
+  height: 70px;
+  width: 200px;
 }
 
 .btnBack::before {

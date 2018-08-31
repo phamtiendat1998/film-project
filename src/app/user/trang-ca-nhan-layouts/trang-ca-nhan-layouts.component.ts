@@ -16,9 +16,11 @@ export class TrangCaNhanLayoutsComponent implements OnInit {
   public statusInfo: boolean = false;
   public statusUpDate: string;
   public infoUser: NguoiDung;
+  public veDaDat: any;
   constructor(private tranUser: TransformUserService, private userSV: NguoiDungService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.infoUser = JSON.parse(localStorage.getItem('userLogin'));
   }
   timeOutStatus() {
@@ -94,8 +96,9 @@ export class TrangCaNhanLayoutsComponent implements OnInit {
   layLichSu() {
     this.userSV.layLichSuDatVe(this.infoUser).subscribe(
       (kq: any) => {
-        // console.log(kq);
+        console.log(kq);
         if (kq.DanhSachVeDaDat.length !== 0) {
+          this.veDaDat = kq.DanhSachVeDaDat;
           this.statusLichSu = true;
         } else {
           this.statusLichSu = false;

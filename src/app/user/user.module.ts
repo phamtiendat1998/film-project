@@ -32,14 +32,17 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TrangCaNhanLayoutsComponent } from './trang-ca-nhan-layouts/trang-ca-nhan-layouts.component';
 import { TrangChuLayoutsComponent } from './trang-chu-layouts/trang-chu-layouts.component';
 import { ItemTinTucComponent } from './item-tin-tuc/item-tin-tuc.component';
+import { TinTucLayoutsComponent } from './tin-tuc-layouts/tin-tuc-layouts.component';
+import { ContactComponent } from './contact/contact.component';
+import { LoadPageComponent } from './load-page/load-page.component';
 
 @NgModule({
   imports: [
     CommonModule, MatButtonModule, MatDialogModule, BrowserAnimationsModule, NoopAnimationsModule, PipeModule, RouterModule, FormsModule, Ng2SearchPipeModule, BrowserAnimationsModule
   ],
-  declarations: [SideBarComponent, UserLayoutsComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent, TrangChuLayoutsComponent, ItemTinTucComponent],
+  declarations: [SideBarComponent, UserLayoutsComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent, TrangChuLayoutsComponent, ItemTinTucComponent, TinTucLayoutsComponent, ContactComponent, LoadPageComponent],
   exports: [
-    SideBarComponent, UserLayoutsComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent, ItemTinTucComponent
+    SideBarComponent, UserLayoutsComponent, SearchBarComponent, CarouselComponent, NewsComponent, ItemPointComponent, DangNhapComponent, ItemPhimComponent, ListPhimComponent, PhimDangChieuComponent, PopupTrailerComponent, ChiTietPhimLayoutsComponent, DatVeLayoutsComponent, ItemGheComponent, LoadItemComponent, AnouThongBaoComponent, PickGioComponent, ListGheComponent, PhimSapChieuComponent, DanhGiaComponent, ItemPhimSearchComponent, TrangCaNhanLayoutsComponent, ItemTinTucComponent, TinTucLayoutsComponent, ContactComponent, LoadPageComponent
   ]
 })
 export class UserModule { }

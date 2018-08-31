@@ -16,11 +16,10 @@
   padding-left: 110px;
   width: 100%;
   z-index: 99;
-  height: 100vh;
 }
 
-.title {
-  /* border-bottom: 1px solid gold; */
+.tcn {
+  height: 100vh;
 }
 
 .title p {
@@ -157,5 +156,19 @@ input.ng-invalid.ng-touched {
 /* Lich sử */
 .statusLS {
   font-size: 30px;
+  color: #FFCE00;
+}
+
+.item-lichsu {
+  padding: 10px;
+  border: 1px solid #FFCE00;
+  border-radius: .25rem;
+}
+
+.item-lichsu p {
+  color: #908199;
+}
+
+.item-lichsu p span {
   color: #FFCE00;
 }
