@@ -47,7 +47,7 @@
               <td>{{phim.NgayKhoiChieu}}</td>
               <td>{{phim.DanhGia | number}}</td>
               <td>
-                <button class="btn btn-success"
+                <button class="btn btn-outline-primary"
                 #btnChinhSua
                 [attr.data-maPhim]="phim.MaPhim"
                 [attr.data-tenPhim]="phim.TenPhim"
@@ -58,8 +58,8 @@
                 [attr.data-DanhGia]="phim.DanhGia"
               (click)="ChinhSuaPhim(btnChinhSua)"
               data-toggle="modal" data-target="#ModalCapNhat"
-                >Sửa</button>
-                <button class="btn btn-danger"
+                ><i class="fa fa-edit"></i></button>
+                <button class="btn btn-outline-danger"
                 [attr.data-maPhim]="phim.MaPhim"
                 [attr.data-tenPhim]="phim.TenPhim"
                 [attr.data-hinhAnh]="phim.HinhAnh"
@@ -68,7 +68,7 @@
                 [attr.data-ngayKhoiChieu]="phim.NgayKhoiChieu"
                 [attr.data-DanhGia]="phim.DanhGia"
               (click)="XoaPhim(phim.MaPhim)"
-                >Xóa</button>
+                ><i class="fa fa-trash-o"></i></button>
               </td>
             </tr>
           </tbody>
