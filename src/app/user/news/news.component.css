@@ -1,7 +1,6 @@
 .tintuc {
   height: 100vh;
-  overflow: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .title {
@@ -16,3 +15,15 @@
     0 0 16px gold;
 }
 
+.col-giua {
+  margin-top: 30px;
+}
+
+.col-phim {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.col-4 {
+  height: 80vh;
+}

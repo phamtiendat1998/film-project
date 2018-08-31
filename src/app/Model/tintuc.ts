@@ -1,5 +1,5 @@
 export class TinTuc {
-    public Ma: number;
+    public Ma: string;
     public TieuDe: string;
     public HinhAnhTieuDe: string;
     public NoiDung: string;
