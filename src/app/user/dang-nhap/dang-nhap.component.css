@@ -27,6 +27,7 @@
   0% {
     background-position: 0%;
   }
+
   100% {
     background-position: 400%;
   }
@@ -158,16 +159,15 @@ input:focus::placeholder {
 }
 
 /* INPUT VALIDATION */
-
-input.ng-invalid.ng-touched{
-  border: 2px solid red;
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
 }
+
 input.ng-valid.ng-touched {
-border: 2px solid green;
+  border: 1px solid green;
 }
 
 /* Load */
-
 .load {
   display: none;
 }

@@ -14,6 +14,7 @@ import { TrangCaNhanLayoutsComponent } from "./user/trang-ca-nhan-layouts/trang-
 import { AnouThongBaoComponent } from "./user/anou-thong-bao/anou-thong-bao.component";
 import { TrangChuLayoutsComponent } from "./user/trang-chu-layouts/trang-chu-layouts.component";
 import { TinTucLayoutsComponent } from './user/tin-tuc-layouts/tin-tuc-layouts.component';
+import { LoginGuardService } from './services/login-guard.service';
 
 const appRoute: Routes = [
   {
@@ -30,7 +31,7 @@ const appRoute: Routes = [
     path: "admin", component: LoginAdminComponent
   },
   {
-    path: "admintrangchu", component: AdminLayoutComponent, children: [
+    path: "admintrangchu", component: AdminLayoutComponent, canActivate: [LoginGuardService], children: [
       { path: 'charts', component: TrangchuAdminComponent },
       { path: 'quanlyphim', component: QuanLyPhimComponent },
       { path: 'quanlynguoidung', component: QuanLyNguoiDungComponent },
@@ -38,6 +39,9 @@ const appRoute: Routes = [
       { path: 'admin', component: LoginAdminComponent }
     ]
   },
+  {
+    path: '**', redirectTo: '', pathMatch: 'full'
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoute)]

@@ -129,7 +129,7 @@ export class QuanLyNguoiDungComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.LayDSND();
-    }, 2000);
+    }, 500);
 
     $('#btnDong').click(function () {
       {

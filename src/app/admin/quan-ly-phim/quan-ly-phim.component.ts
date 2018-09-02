@@ -14,26 +14,26 @@ declare var $: any;
 export class QuanLyPhimComponent implements OnInit {
   @ViewChild("formThemPhim") formTP: NgForm;
   @ViewChild("formCapNhatPhim") formCNP: NgForm;
-  mangPhim:string[] = [];
+  mangPhim: string[] = [];
   key: string = 'name'; //set default
   reverse: boolean = false;
-  sort(key){
+  sort(key) {
     this.key = key;
     this.reverse = !this.reverse;
   }
-  themPhim(value:Phim, HinhAnh) {
+  themPhim(value: Phim, HinhAnh) {
     value.MaNhom = "GP03";
     value.HinhAnh = HinhAnh[0].name;
-    console.log( HinhAnh[0]);
+    console.log(HinhAnh[0]);
     this.PhimSV.ThemPhim(value).subscribe(
       (kq) => {
-        if(typeof(kq)=="object"){
-          this.PhimSV.ThemHinhAnh( HinhAnh[0], value.TenPhim).subscribe(
+        if (typeof (kq) == "object") {
+          this.PhimSV.ThemHinhAnh(HinhAnh[0], value.TenPhim).subscribe(
             (kqThemHinhAnh) => {
               console.log(kqThemHinhAnh);
             }
           )
-          setTimeout(()=>{
+          setTimeout(() => {
             swal({
               type: 'success',
               title: 'Thêm thành công',
@@ -43,12 +43,12 @@ export class QuanLyPhimComponent implements OnInit {
             this.LayDSP();
             this.formTP.reset();
             $('#btnDongformTP').trigger('click');
-          },500)
-        }else{
+          }, 500)
+        } else {
           swal('Phim đã tồn tại !')
           this.formTP.reset();
         }
-       
+
       },
       (error) => {
         console.log(error);
@@ -56,7 +56,7 @@ export class QuanLyPhimComponent implements OnInit {
     )
   }
   //Chỉnh sửa phim
-  ChinhSuaPhim(thamso){
+  ChinhSuaPhim(thamso) {
     let maphim = thamso.getAttribute("data-maPhim");
     let tenphim = thamso.getAttribute("data-tenPhim");
     let trailer = thamso.getAttribute("data-Trailer");
@@ -64,66 +64,69 @@ export class QuanLyPhimComponent implements OnInit {
     let ngaykhoichieu = thamso.getAttribute("data-ngayKhoiChieu");
     let danhgia = thamso.getAttribute("data-danhGia");
     this.formCNP.setValue({
-      MaPhim:maphim,
-      TenPhim:tenphim,
-      Trailer:trailer,
-      MoTa:mota,
-      NgayKhoiChieu:ngaykhoichieu,
-      DanhGia:danhgia,
-  })
-}
-CapNhatPhim(value:Phim,HinhAnh){
-  value.MaNhom = "GP03";
-  value.HinhAnh = HinhAnh[0].name;
-  this.PhimSV.capNhatPhim(value).subscribe(
-    (kq) => {
-      this.PhimSV.ThemHinhAnh(HinhAnh[0], value.TenPhim).subscribe(
-        (kqThemHinhAnh) => {
-          console.log(kqThemHinhAnh);
+      MaPhim: maphim,
+      TenPhim: tenphim,
+      Trailer: trailer,
+      MoTa: mota,
+      NgayKhoiChieu: ngaykhoichieu,
+      DanhGia: danhgia,
+    })
+  }
+  CapNhatPhim(value: Phim, HinhAnh) {
+    if (HinhAnh.length == 0) {
+      swal('Xin hãy chọn lại hình ảnh !')
+    } else {
+      value.MaNhom = "GP03";
+      value.HinhAnh = HinhAnh[0].name;
+      this.PhimSV.capNhatPhim(value).subscribe(
+        (kq) => {
+          this.PhimSV.ThemHinhAnh(HinhAnh[0], value.TenPhim).subscribe(
+            (kqThemHinhAnh) => {
+              console.log(kqThemHinhAnh);
+            }
+          )
+          swal({
+            type: 'success',
+            title: 'Cập nhật thành công',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          this.LayDSP();
+          this.formCNP.reset();
+          $('#btnDongformCNP').trigger('click');
+        },
+        (error) => {
+          console.log(error);
         }
       )
+    }
+  }
+  XoaPhim(value) {
+    this.PhimSV.XoaPhim(value).subscribe((kq: any) => {
       swal({
-        type: 'success',
-        title: 'Cập nhật thành công',
-        showConfirmButton: false,
-        timer: 2000
+        title: 'Bạn có chắc?',
+        text: "bạn muốn xóa phim này!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          swal(
+            'Đã Xóa!',
+            'Bạn xóa thành công phim này.',
+            'success'
+          )
+        }
       })
       this.LayDSP();
-      this.formCNP.reset();
-      $('#btnDongformCNP').trigger('click');
-    },
-    (error) => {
+    }, error => {
       console.log(error);
     }
-  )
-
-}
-XoaPhim(value){
-  this.PhimSV.XoaPhim(value).subscribe((kq:any)=>{
-    swal({
-      title: 'Bạn có chắc?',
-      text: "bạn muốn xóa phim này!",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.value) {
-        swal(
-          'Đã Xóa!',
-          'Bạn xóa thành công phim này.',
-          'success'
-        )
-      }
-    })
-    this.LayDSP();
-  }, error => {
-    console.log(error);
+    );
   }
-);
-}
-  LayDSP(){
+  LayDSP() {
     this.PhimSV.layDanhSachPhim().subscribe(
       (kq: any) => {
         this.mangPhim = kq;
@@ -134,12 +137,12 @@ XoaPhim(value){
     );
   }
 
-  constructor(private PhimSV:PhimService) { }
+  constructor(private PhimSV: PhimService) { }
 
   ngOnInit() {
     setTimeout(() => {
-this.LayDSP();
-    }, 2000);
+      this.LayDSP();
+    }, 500);
   }
 
 }
