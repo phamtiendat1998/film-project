@@ -71,7 +71,6 @@
 }
 
 /* ------ */
-
 .card-hover-content {
   cursor: pointer;
   font-size: 20px;
@@ -97,4 +96,24 @@
   box-shadow: none;
   border: none;
   outline: none;
+}
+
+/* ----------------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .card-hover-content {
+    text-shadow: 0 0 2px black,
+      0 0 4px black,
+      0 0 8px black,
+      0 0 16px black,
+      0 0 32px black,
+      0 0 64px black;
+  }
+
+  .card-hover-content span {
+    display: inline-block;
+  }
 }

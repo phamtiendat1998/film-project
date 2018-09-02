@@ -24,6 +24,10 @@
     cursive;
 }
 
+.name-sub-title {
+  color: #FFCE00;
+}
+
 .social p {
   font-size: 30px;
   margin: 0;
@@ -60,4 +64,11 @@
 .sub-soluot {
   font-family: 'Pacifico',
     cursive;
+}
+
+/* ----------------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .back-contact {
+    height: auto;
+  }
 }

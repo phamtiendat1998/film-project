@@ -30,3 +30,21 @@
   background-attachment: fixed;
   filter: brightness(20%);
 }
+
+/* ----------------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .content {
+    padding-left: 0;
+    background-color: black;
+  }
+
+  .img-trangchu {
+    background-image: url('./../../../assets/img/back-trangchu-mobi.jpeg');
+    height: 200px;
+    background-size: auto 500px;
+  }
+
+  #phim {
+    background-color: black;
+  }
+}

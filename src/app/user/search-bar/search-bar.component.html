@@ -1,4 +1,4 @@
-<div class="d-flex search">
+<div class="search">
   <div class="search-bar d-flex align-items-center justify-content-center" (click)="moDivSearch();">
     <i class="fa fa-search animated bounceInLeft" *ngIf="!status; else showClose"></i>
     <ng-template #showClose>
@@ -6,7 +6,7 @@
     </ng-template>
   </div>
   <div class="search-area" [ngClass]="{'search-area--open': status}">
-    <div class="search-box animated fadeIn ml-auto mr-auto mt-4" *ngIf="status">
+    <div class="search-box animated fadeIn ml-auto mr-auto mt-sm-4" *ngIf="status">
       <input id="go-search" type="text" placeholder="Nhập từ khóa tìm kiếm..." [(ngModel)]="filter" (keyup)="getKeyword($event)">
       <p class="text-white pt-3" *ngIf="!statusSearch; else search">Những tìm kiếm phổ biến:</p>
       <ng-template #search>

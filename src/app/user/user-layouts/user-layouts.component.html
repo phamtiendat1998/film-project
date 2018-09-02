@@ -1,6 +1,6 @@
 <app-load-page *ngIf="!statusPreLoad"></app-load-page>
 <div class="wrapper" *ngIf="statusPreLoad">
-  <div class="side-bar d-flex">
+  <div class="side-bar d-sm-flex">
     <app-search-bar></app-search-bar>
     <app-side-bar [statusLogin]="statusDangNhap" [statusSCR]="statusScroll"></app-side-bar>
   </div>

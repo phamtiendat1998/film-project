@@ -70,3 +70,38 @@
     </li>
   </ul>
 </nav>
+<nav class="sidebar-mobi">
+  <div class="sidebar-header d-flex align-items-center justify-content-center">
+    <a href="#" [routerLink]="['/']">
+      <div class="logo">
+      </div>
+    </a>
+    <div class="sidebar-item" data-toggle="modal" data-target="#popupLogin" *ngIf="daLogin; else user">
+      <i class="fa fa-sign-in animated fadeIn"></i>
+    </div>
+    <ng-template #user>
+      <div class="user-dn" (click)="ClickUser()">
+        <p class="text-center sidebar-item m-0">
+          <i class="fa fa-user-circle-o"></i>
+          <br>
+        </p>
+      </div>
+      <div class="user-dn-hover text-center">
+        <p class="content-hover trangcanhan mt-3" [routerLink]="['/trangcanhan']">Trang Cá Nhân</p>
+        <p class="content-hover" (click)="DangXuat()">Thoát</p>
+      </div>
+    </ng-template>
+    <a class="sidebar-item" #home href="#home" (click)="getScrollLinkMoblie(home)">
+      <i class="fa fa-home animated fadeIn"></i>
+    </a>
+    <a class="sidebar-item" #phim href="#phim" (click)="getScrollLinkMoblie(phim)">
+      <i class="fa fa-ticket animated fadeIn"></i>
+    </a>
+    <a class="sidebar-item" #tintuc href="#tintuc" (click)="getScrollLinkMoblie(tintuc)">
+      <i class="fa fa-info animated fadeIn"></i>
+    </a>
+    <a class="sidebar-item" #lienhe href="#lienhe" (click)="getScrollLinkMoblie(lienhe)">
+      <i class="fa fa-address-book-o animated fadeIn"></i>
+    </a>
+  </div>
+</nav>

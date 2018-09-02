@@ -55,3 +55,36 @@
 .share i:hover {
   color: #FFCE00;
 }
+
+/* -----------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .content {
+    padding-left: 0;
+  }
+
+  .tintuc {
+    height: auto;
+  }
+
+  .tieude p {
+    font-size: 20px;
+  }
+
+  .noidung p {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .share {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .share h4 {
+    font-size: 10px;
+  }
+
+  .share p {
+    font-size: 20px;
+  }
+}

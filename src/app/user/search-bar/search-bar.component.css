@@ -1,5 +1,7 @@
 .search {
   overflow: hidden;
+  display: flex;
+  width: 100%;
 }
 
 .search-bar {
@@ -11,8 +13,7 @@
 }
 
 .search-area {
-  height: 100%;
-  transition: width 1s;
+  transition: all 1s;
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   height: 100vh;
   width: 0;
@@ -45,13 +46,34 @@
   border-bottom: 2px solid #FFCE00;
 }
 
-
 /* KeyWord */
-
 .disKeyWord {
   color: white;
 }
 
 .disKeyWord span {
   color: #FFCE00;
+}
+
+/* -------------- RESPONSIVE------------------------ */
+@media screen and (max-width: 576px) {
+  .search {
+    width: 100%;
+    display: block;
+  }
+
+  .search-bar {
+    width: 100%;
+    height: 30px;
+  }
+
+  .search-area {
+    height: 0;
+    width: 100%;
+  }
+
+  .search-area--open {
+    width: 100%;
+    height: 620px;
+  }
 }

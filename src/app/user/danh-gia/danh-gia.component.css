@@ -8,7 +8,7 @@
   text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
 }
 
-.col-6 {
+.col-sm-6 {
   height: 100vh;
 }
 
@@ -60,10 +60,9 @@
 }
 
 /* Rate */
-
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
-/* Basic styles */
 
+/* Basic styles */
 .rate {
   display: inline-block;
   margin: 0;
@@ -104,7 +103,6 @@ label:hover~label {
 }
 
 /* Half-star*/
-
 .star-half {
   position: relative;
 }
@@ -116,7 +114,6 @@ label:hover~label {
 }
 
 /* Đánh gia */
-
 .item-danhgia {
   width: 100%;
   background-color: black;
@@ -140,4 +137,19 @@ label:hover~label {
 .content {
   padding-left: 10px;
   width: 70%;
+}
+
+/* -----------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .col-sm-6 {
+    height: auto;
+  }
+
+  .form-danhgia h3 {
+    font-size: 20px;
+  }
+
+  .hienthi-danhgia {
+    margin: 0;
+  }
 }

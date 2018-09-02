@@ -22,8 +22,17 @@
 .col-phim {
   overflow: auto;
   overflow-x: hidden;
+  height: 80vh;
 }
 
-.col-4 {
-  height: 80vh;
+
+/* ----------------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .title p {
+    font-size: 10px;
+  }
+
+  .col-phim {
+    height: 50vh;
+  }
 }

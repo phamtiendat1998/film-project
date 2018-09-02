@@ -142,3 +142,30 @@
   margin: 0;
   padding: 5px 10px;
 }
+
+/* -----------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .datve-layout {
+    height: auto;
+  }
+
+  .img-phim {
+    height: 400px;
+  }
+
+  .tbChonNgay {
+    font-size: 30px;
+  }
+
+  .content-thanhtoan {
+    height: 250px;
+  }
+
+  .tongtien {
+    font-size: 20px;
+  }
+
+  .info-phim {
+    height: 480px;
+  }
+}

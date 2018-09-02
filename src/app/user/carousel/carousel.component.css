@@ -27,12 +27,15 @@ img {
   0% {
     border-top: 2px solid #FFCE00;
   }
+
   25% {
     border-right: 2px solid #FFCE00;
   }
+
   50% {
     border-bottom: 2px solid #FFCE00;
   }
+
   100% {
     border-left: 2px solid #FFCE00;
   }
@@ -108,7 +111,6 @@ img {
 }
 
 /* BTN */
-
 .btn-datve {
   background-color: transparent;
   color: #fff;
@@ -125,7 +127,58 @@ img {
 }
 
 /* ANIMATED */
-
 .delay {
   animation-delay: 1s;
+}
+
+/* ----------------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .carousel-item {
+    height: auto;
+  }
+
+  .carousel-caption {
+    height: 100%;
+    top: 5%;
+    left: 10%;
+    width: 100%;
+  }
+
+  .carousel-title {
+    font-size: 20px;
+  }
+
+  .info-news {
+    display: none;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    z-index: 0;
+    border-radius: 0;
+    border: none;
+  }
+
+  .carousel-control-next:hover,
+  .carousel-control-prev:hover {
+    animation: none;
+  }
+
+  .carousel-control-next {
+    height: 50%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .carousel-control-prev {
+    right: 0;
+    height: 50%;
+    top: 0;
+  }
 }

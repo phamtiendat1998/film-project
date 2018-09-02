@@ -45,3 +45,14 @@ a:hover {
 .item-tintuc:hover .item-tintuc-title {
   color: black;
 }
+
+/* ----------------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .item-tintuc-title {
+    font-size: 10px;
+  }
+
+  .item-tintuc-tag {
+    font-size: 10px;
+  }
+}

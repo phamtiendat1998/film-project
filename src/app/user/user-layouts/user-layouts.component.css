@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  width: 100%;
 }
 
 .side-bar {
@@ -13,16 +14,7 @@
   background-color: #0c0c0c;
 }
 
-.content {
-  padding-left: 110px;
-  width: 100%;
-  right: 0;
-  background-color: #0c0c0c;
-  z-index: 99;
-}
-
 /* Modal Trailer */
-
 #modalTrailer .modal-dialog {
   max-width: 70%;
 }
@@ -52,8 +44,22 @@
 }
 
 /* MODAL LOGIN */
-
 .popupLoginDialog {
   max-width: 670px;
   overflow: hidden;
+}
+
+/* -----------RESPONSIVE---------------- */
+@media screen and (max-width: 576px) {
+  .noidung {
+    margin-top: 110px;
+  }
+
+  .side-bar {
+    width: 100%;
+  }
+
+  #modalTrailer .modal-dialog {
+    max-width: 100%;
+  }
 }

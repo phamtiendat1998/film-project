@@ -9,7 +9,7 @@
           <p class="text-center name"> {{infoUser.HoTen}} </p>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-12 col-sm-4">
         <div class="list-group" id="list-tab" role="tablist">
           <a class="list-group-item list-group-item-action active" id="list-ThongTin-list" data-toggle="list" href="#list-ThongTin"
             role="tab" aria-controls="ThongTin">Thông Tin</a>
@@ -21,7 +21,7 @@
             role="tab" aria-controls="lichsu" (click)="layLichSu()">Lịch Sử Đặt Vé</a>
         </div>
       </div>
-      <div class="col-8">
+      <div class="col-12 pt-3 pt-sm-0 col-sm-8">
         <div class="tab-content" id="nav-tabContent">
           <!-- Tab Thông Tin -->
           <div class="tab-pane animated fadeIn show active" id="list-ThongTin" role="tabpanel" aria-labelledby="list-ThongTin-list">
@@ -105,7 +105,7 @@
                 <p>Tên phim: <span>{{ve.TenPhim}}</span></p>
                 <p>Rạp :<span>{{ve.Rap}}</span></p>
                 <p>Mã ghế :<span>{{ve.MaGhe}}</span></p>
-                <p>Ngày đặt : <span>{{ve.NgayDat}}</span></p>
+                <p>Ngày đặt : <span>{{ve.NgayDat | date:'dd - MM - yyyy'}}</span></p>
                 <p>Giá vé : <span>{{ve.GiaVe}}</span></p>
               </div>
             </ng-template>

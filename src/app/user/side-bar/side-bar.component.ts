@@ -70,4 +70,9 @@ export class SideBarComponent implements OnInit {
       scrollTop: $(any.hash).offset().top
     }, 1000)
   }
+  getScrollLinkMoblie(any) {
+    $('html').animate({
+      scrollTop: $(any.hash).offset().top - 110
+    }, 1000)
+  }
 }
