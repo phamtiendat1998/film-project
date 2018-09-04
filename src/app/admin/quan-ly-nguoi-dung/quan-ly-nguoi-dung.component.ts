@@ -100,29 +100,28 @@ export class QuanLyNguoiDungComponent implements OnInit {
     );
   }
   XoaNguoiDung(value) {
-    this.nguoiDungSV.XoaNguoiDung(value).subscribe((kq: any) => {
-      swal({
-        title: 'Bạn có chắc?',
-        text: "bạn muốn xóa người dùng này!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.value) {
-          swal(
-            'Đã Xóa!',
-            'Bạn xóa thành công người dùng này.',
-            'success'
-          )
-        }
-      })
-      this.LayDSND();
-    }, error => {
-      console.log(error);
-    }
-    );
+    swal({
+      title: 'Bạn có chắc?',
+      text: "bạn muốn xóa người dùng này!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        swal(
+          'Đã Xóa!',
+          'Bạn xóa thành công người dùng này.',
+          'success'
+        )
+        this.nguoiDungSV.XoaNguoiDung(value).subscribe(
+          (kq: any) => {
+            this.LayDSND();
+          }
+        )
+      }
+    })
   }
   constructor(private nguoiDungSV: NguoiDungService) { }
 

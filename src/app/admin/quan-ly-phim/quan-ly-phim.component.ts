@@ -102,29 +102,29 @@ export class QuanLyPhimComponent implements OnInit {
     }
   }
   XoaPhim(value) {
-    this.PhimSV.XoaPhim(value).subscribe((kq: any) => {
-      swal({
-        title: 'Bạn có chắc?',
-        text: "bạn muốn xóa phim này!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.value) {
-          swal(
-            'Đã Xóa!',
-            'Bạn xóa thành công phim này.',
-            'success'
-          )
-        }
-      })
-      this.LayDSP();
-    }, error => {
-      console.log(error);
-    }
-    );
+    swal({
+      title: 'Bạn có chắc?',
+      text: "bạn muốn xóa phim này!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        this.PhimSV.XoaPhim(value).subscribe(
+          (kq: any) => {
+            console.log(kq);
+            this.LayDSP();
+          }
+        );
+        swal(
+          'Đã Xóa!',
+          'Bạn xóa thành công phim này.',
+          'success'
+        )
+      }
+    })
   }
   LayDSP() {
     this.PhimSV.layDanhSachPhim().subscribe(
